@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Book at La Belle — Reserve your spot at our premium beauty and nail spa salon. Our booking form is quick and easy." />
+  <title>Appointments | La Belle Beauty &amp; Nail Spa</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========================================
+       HEADER
+  ======================================== -->
+  <header class="header" id="header">
+    <a href="index.html" class="logo" aria-label="La Belle — Home">
+      <span class="logo-title">La Belle</span>
+      <span class="logo-subtitle">Beauty &amp; Nail Spa</span>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav" id="nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="galerie.html" class="nav-link">Gallery</a>
+      <a href="programare.html" class="nav-link">Appointments</a>
+    </nav>
+  </header>
+
+
+  <!-- ========================================
+       PAGE HERO
+  ======================================== -->
+  <div class="page-hero" aria-hidden="true">
+    <img
+      src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1920&q=80"
+      alt="Book an Appointment at La Belle Salon"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <span class="page-hero-label">La Belle</span>
+      <h1 class="page-hero-title"><em>Book</em> Now</h1>
+    </div>
+  </div>
+
+
+  <!-- ========================================
+       BOOKING SECTION
+  ======================================== -->
+  <main class="booking-wrapper">
+
+    <div class="booking-intro reveal">
+      <span class="section-label" style="display:block; text-align:center;">Reserve Your Spot</span>
+      <h2 class="section-title" style="text-align:center;">A La Belle Experience</h2>
+      <div class="divider" aria-hidden="true"></div>
+      <p class="section-desc" style="text-align:center; margin: 0 auto 0;">
+        Fill in the form below and our team will contact you as soon as possible to confirm your appointment. We look forward to welcoming you!
+      </p>
+    </div>
+
+    <div class="booking-form-wrap">
+      <div class="booking-form reveal">
+
+        <!-- Booking Form -->
+        <form id="bookingForm" novalidate aria-label="Booking form">
+
+          <!-- Nume + Telefon — side by side on desktop -->
+          <div class="form-row">
+
+            <div class="form-group">
+              <label class="form-label" for="fullName">
+                Full Name <span class="req" aria-hidden="true">*</span>
+              </label>
+              <input
+                class="form-control"
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="E.g.: Jane Smith"
+                autocomplete="name"
+                required
+                aria-required="true"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="phone">
+                Phone Number <span class="req" aria-hidden="true">*</span>
+              </label>
+              <input
+                class="form-control"
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="E.g.: +1 555 000 0000"
+                autocomplete="tel"
+                required
+                aria-required="true"
+                pattern="[0-9\s\+\-\(\)]{7,20}"
+              />
+            </div>
+
+          </div>
+
+          <!-- Serviciu dorit -->
+          <div class="form-group">
+            <label class="form-label" for="service">
+              Desired Service <span class="req" aria-hidden="true">*</span>
+            </label>
+            <select
+              class="form-control"
+              id="service"
+              name="service"
+              required
+              aria-required="true"
+            >
+              <option value="" disabled selected>Choose a service...</option>
+              <optgroup label="Manicure">
+                <option value="manicure-classic">Classic Manicure</option>
+                <option value="manicure-gel">Gel Manicure</option>
+                <option value="manicure-art">Bespoke Nail Art</option>
+                <option value="manicure-semipermanent">Semi-Permanent Polish</option>
+              </optgroup>
+              <optgroup label="Pedicure">
+                <option value="pedicure-classic">Classic Pedicure</option>
+                <option value="pedicure-spa">Spa Pedicure</option>
+                <option value="pedicure-gel">Gel Pedicure</option>
+              </optgroup>
+              <optgroup label="Relaxation &amp; Spa">
+                <option value="spa-relaxare">Full Relaxation Treatment</option>
+                <option value="spa-pietre">Hot Stone Therapy</option>
+                <option value="spa-aromaterapie">Aromatherapy &amp; Massage</option>
+                <option value="spa-pachet">Premium Spa Package</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <!-- Data dorită -->
+          <div class="form-group">
+            <label class="form-label" for="date">
+              Preferred Date <span class="req" aria-hidden="true">*</span>
+            </label>
+            <input
+              class="form-control"
+              type="date"
+              id="date"
+              name="date"
+              required
+              aria-required="true"
+            />
+          </div>
+
+          <!-- Ora preferată -->
+          <div class="form-group">
+            <label class="form-label" for="time">Preferred Time</label>
+            <select class="form-control" id="time" name="time">
+              <option value="" disabled selected>Choose a time...</option>
+              <option value="09:00">09:00</option>
+              <option value="09:30">09:30</option>
+              <option value="10:00">10:00</option>
+              <option value="10:30">10:30</option>
+              <option value="11:00">11:00</option>
+              <option value="11:30">11:30</option>
+              <option value="12:00">12:00</option>
+              <option value="13:00">13:00</option>
+              <option value="13:30">13:30</option>
+              <option value="14:00">14:00</option>
+              <option value="14:30">14:30</option>
+              <option value="15:00">15:00</option>
+              <option value="15:30">15:30</option>
+              <option value="16:00">16:00</option>
+              <option value="16:30">16:30</option>
+              <option value="17:00">17:00</option>
+              <option value="17:30">17:30</option>
+              <option value="18:00">18:00</option>
+            </select>
+          </div>
+
+          <!-- Mesaj -->
+          <div class="form-group">
+            <label class="form-label" for="message">Message / Additional Details</label>
+            <textarea
+              class="form-control"
+              id="message"
+              name="message"
+              placeholder="Tell us any details that would help us deliver the perfect experience for you..."
+              rows="4"
+            ></textarea>
+          </div>
+
+          <!-- Note -->
+          <p style="font-size:0.8rem; color:#8a9ab5; margin-bottom:1.5rem; line-height:1.7;">
+            <span style="color:var(--gold);">*</span> Marked fields are required. We will confirm your appointment by phone within 24 hours.
+          </p>
+
+          <button type="submit" class="btn-submit">
+            Submit Request
+          </button>
+
+        </form>
+
+        <!-- Success Message (hidden by default) -->
+        <div class="form-success" id="formSuccess" aria-live="polite" aria-atomic="true">
+          <div class="success-icon" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <h3 class="success-title">Request Sent Successfully!</h3>
+          <p class="success-text">
+            Thank you for your booking. The La Belle team will reach out to you shortly to confirm the details of your session.<br /><br />
+            We can't wait to welcome you!
+          </p>
+          <a href="index.html" class="success-back">← Back to Home</a>
+        </div>
+
+      </div>
+
+      <!-- Info Cards below form -->
+      <div class="info-cards reveal">
+
+        <div class="info-card">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <h4>Hours</h4>
+          <p>Mon – Sat<br />09:00 – 19:00<br />Sun<br />11:00 – 17:00</p>
+        </div>
+
+        <div class="info-card">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <h4>Phone</h4>
+          <p>+1 281-216-6471</p>
+        </div>
+
+        <div class="info-card">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <h4>Location</h4>
+          <p>440 Rayford Rd<br />Spring, TX</p>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+  <footer class="footer" aria-label="Page footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <div class="logo" aria-label="La Belle">
+            <span class="logo-title">La Belle</span>
+            <span class="logo-subtitle">Beauty &amp; Nail Spa</span>
+          </div>
+          <p>A place where beauty and relaxation meet. We warmly welcome you to discover the La Belle experience.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="galerie.html">Gallery</a></li>
+            <li><a href="programare.html">Appointments</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Get in Touch</h4>
+          <div class="footer-contact">
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <span>440 Rayford Rd, Spring, TX 77386</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </span>
+              <span>+1 281-216-6471</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
+              <span>contact@labelle.ro</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 La Belle. All rights reserved.</span>
+        <span>Crafted with <span class="footer-gold">♥</span> for beauty</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

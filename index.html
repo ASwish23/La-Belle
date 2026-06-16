@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="La Belle — Your premium beauty and nail spa salon. Manicure, pedicure, and exceptional relaxation treatments." />
+  <title>La Belle | Beauty &amp; Nail Spa</title>
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========================================
+       HEADER
+  ======================================== -->
+  <header class="header" id="header">
+    <a href="index.html" class="logo" aria-label="La Belle — Home">
+      <span class="logo-title">La Belle</span>
+      <span class="logo-subtitle">Beauty &amp; Nail Spa</span>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav" id="nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="galerie.html" class="nav-link">Gallery</a>
+      <a href="programare.html" class="nav-link">Appointments</a>
+    </nav>
+  </header>
+
+
+  <!-- ========================================
+       HERO — Full-width Carousel
+  ======================================== -->
+  <section class="hero" aria-label="Salon showcase">
+    <div class="carousel" role="region" aria-label="Showcase images">
+
+      <!-- Slides -->
+      <div class="carousel-track" aria-live="polite">
+
+        <div class="carousel-slide">
+          <img
+            src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1920&q=80"
+            alt="Elegant La Belle salon interior"
+            loading="eager"
+            fetchpriority="high"
+          />
+          <div class="carousel-overlay" aria-hidden="true"></div>
+        </div>
+
+        <div class="carousel-slide">
+          <img
+            src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1920&q=80"
+            alt="Luxury artistic manicure"
+            loading="lazy"
+          />
+          <div class="carousel-overlay" aria-hidden="true"></div>
+        </div>
+
+        <div class="carousel-slide">
+          <img
+            src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1920&q=80"
+            alt="Relaxation and spa treatment"
+            loading="lazy"
+          />
+          <div class="carousel-overlay" aria-hidden="true"></div>
+        </div>
+
+      </div>
+
+      <!-- Hero Content — fixed above all slides -->
+      <div class="carousel-content">
+        <span class="hero-badge">Premium Beauty Salon</span>
+        <h1 class="hero-title">Discover your oasis of<br />relaxation and beauty.</h1>
+        <div class="hero-divider" aria-hidden="true"></div>
+        <p class="hero-subtitle">Unique experiences, impeccable care, and moments of true indulgence — crafted exclusively for you.</p>
+        <a href="programare.html" class="btn-gold">
+          Book Now
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Nav Buttons -->
+      <button class="carousel-btn prev" aria-label="Previous slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <button class="carousel-btn next" aria-label="Next slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+
+      <!-- Dot Indicators -->
+      <div class="carousel-dots" role="tablist" aria-label="Select slide">
+        <button class="dot active" role="tab" aria-label="Slide 1" aria-selected="true"></button>
+        <button class="dot" role="tab" aria-label="Slide 2" aria-selected="false"></button>
+        <button class="dot" role="tab" aria-label="Slide 3" aria-selected="false"></button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================
+       SERVICES SECTION
+  ======================================== -->
+  <section class="section services" id="servicii" aria-labelledby="services-heading">
+    <span class="section-label">What We Offer</span>
+    <h2 class="section-title" id="services-heading">Our Services</h2>
+    <div class="divider" aria-hidden="true"></div>
+    <p class="section-desc" style="margin: 0 auto 3.5rem;">
+      Every visit to La Belle is a complete experience — a beauty and wellness ritual designed to make you shine, inside and out.
+    </p>
+
+    <div class="services-grid">
+
+      <!-- Card 1: Manichiură -->
+      <article class="service-card reveal reveal-delay-1">
+        <div class="service-img-wrap">
+          <img
+            class="service-img"
+            src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=80"
+            alt="Artistic manicure and hand care"
+            loading="lazy"
+          />
+        </div>
+        <div class="service-body">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          </div>
+          <h3 class="service-title">Manicure</h3>
+          <p class="service-desc">
+            Place your hands in expert care. We offer a full range of treatments — from timeless classics to long-lasting gel and bespoke nail art — all designed to highlight your natural beauty and leave you feeling like royalty.
+          </p>
+          <a href="programare.html" class="service-cta">
+            Book Now
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 2: Pedichiură -->
+      <article class="service-card reveal reveal-delay-2">
+        <div class="service-img-wrap">
+          <img
+            class="service-img"
+            src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=800&q=80"
+            alt="Pedicure and foot care"
+            loading="lazy"
+          />
+        </div>
+        <div class="service-body">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 1 5 5v3a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"/><path d="M5.5 14.5s-2 5.5 6.5 5.5 6.5-5.5 6.5-5.5"/></svg>
+          </div>
+          <h3 class="service-title">Pedicure</h3>
+          <p class="service-desc">
+            A complete pampering ritual for your feet. We blend professional care techniques with premium products to deliver comfort, flawless aesthetics, and a feeling of effortless lightness with every step.
+          </p>
+          <a href="programare.html" class="service-cta">
+            Book Now
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 3: Relaxare & Spa -->
+      <article class="service-card reveal reveal-delay-3">
+        <div class="service-img-wrap">
+          <img
+            class="service-img"
+            src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80"
+            alt="Luxury relaxation and spa treatments"
+            loading="lazy"
+          />
+        </div>
+        <div class="service-body">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <h3 class="service-title">Relaxation &amp; Spa</h3>
+          <p class="service-desc">
+            Escape from your daily routine and surrender to an atmosphere of profound tranquility. Our spa treatments are designed to regenerate your body and mind, restoring your inner balance and harmony.
+          </p>
+          <a href="programare.html" class="service-cta">
+            Book Now
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 4: Solar -->
+      <article class="service-card reveal reveal-delay-1">
+        <div class="service-img-wrap">
+          <img
+            class="service-img"
+            src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&h=500&q=80"
+            alt="Solar acrylic nail enhancements"
+            loading="lazy"
+          />
+        </div>
+        <div class="service-body">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3 class="service-title">Solar Nails</h3>
+          <p class="service-desc">
+            Experience the ultimate in nail durability and elegance with our solar nail system. Using a premium powder-and-liquid acrylic blend, our technicians sculpt beautiful, long-lasting enhancements that resist chipping and maintain a flawless finish for weeks — no UV lamp required.
+          </p>
+          <a href="programare.html" class="service-cta">
+            Book Now
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 5: Waxing -->
+      <article class="service-card reveal reveal-delay-2">
+        <div class="service-img-wrap">
+          <img
+            class="service-img"
+            src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&h=500&q=80"
+            alt="Professional waxing and hair removal"
+            loading="lazy"
+          />
+        </div>
+        <div class="service-body">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
+          <h3 class="service-title">Waxing</h3>
+          <p class="service-desc">
+            Reveal silky-smooth skin with our professional waxing treatments. We use high-quality, skin-friendly wax and gentle techniques to deliver thorough, long-lasting hair removal for all body areas — leaving you feeling confident, comfortable, and beautifully smooth.
+          </p>
+          <a href="programare.html" class="service-cta">
+            Book Now
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+  <footer class="footer" aria-label="Page footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <div class="logo" aria-label="La Belle">
+            <span class="logo-title">La Belle</span>
+            <span class="logo-subtitle">Beauty &amp; Nail Spa</span>
+          </div>
+          <p>A place where beauty and relaxation meet. We warmly welcome you to discover the La Belle experience — a sanctuary of elegance and well-being.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="galerie.html">Gallery</a></li>
+            <li><a href="programare.html">Appointments</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Get in Touch</h4>
+          <div class="footer-contact">
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <span>440 Rayford Rd, Spring, TX 77386</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </span>
+              <span>+1 281-216-6471</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
+              <span>contact@labelle.ro</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </span>
+              <span>Mon – Sat: 09:00 – 19:00</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 La Belle. All rights reserved.</span>
+        <span>Crafted with <span class="footer-gold">♥</span> for beauty</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

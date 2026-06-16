@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="La Belle Gallery — Discover images from our beauty and nail spa salon. Luxury manicure, pedicure, and spa treatments." />
+  <title>Gallery | La Belle Beauty &amp; Nail Spa</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========================================
+       HEADER
+  ======================================== -->
+  <header class="header" id="header">
+    <a href="index.html" class="logo" aria-label="La Belle — Home">
+      <span class="logo-title">La Belle</span>
+      <span class="logo-subtitle">Beauty &amp; Nail Spa</span>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav" id="nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="galerie.html" class="nav-link">Gallery</a>
+      <a href="programare.html" class="nav-link">Appointments</a>
+    </nav>
+  </header>
+
+
+  <!-- ========================================
+       PAGE HERO
+  ======================================== -->
+  <div class="page-hero" aria-hidden="true">
+    <img
+      src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1920&q=80"
+      alt="La Belle Salon Gallery"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <span class="page-hero-label">La Belle</span>
+      <h1 class="page-hero-title">Our <em>Gallery</em></h1>
+    </div>
+  </div>
+
+
+  <!-- ========================================
+       GALLERY SECTION
+  ======================================== -->
+  <section class="gallery-section" aria-labelledby="gallery-heading">
+    <span class="section-label">Images &amp; Inspiration</span>
+    <h2 class="section-title" id="gallery-heading">A World of Beauty</h2>
+    <div class="divider" aria-hidden="true"></div>
+    <p class="section-desc" style="margin: 0 auto 3.5rem; max-width: 560px;">
+      Every image tells a story about our artistry, our passion for detail, and the unique atmosphere we create for each guest.
+    </p>
+
+    <!-- Masonry Grid -->
+    <div class="gallery-grid" role="list" aria-label="Salon image gallery">
+
+      <!-- Row 1 -->
+      <figure class="gallery-item reveal" role="listitem" tabindex="0" aria-label="Crystal gem nail design">
+        <img
+          src="poza5.jpeg"
+          alt="Baby pink nails with crystal gem accents"
+          loading="lazy"
+        />
+        <div class="gallery-item-hover" aria-hidden="true">
+          <span>Crystal Gem Nails</span>
+        </div>
+      </figure>
+
+      <figure class="gallery-item reveal reveal-delay-1" role="listitem" tabindex="0" aria-label="Pink glitter ombré nails">
+        <img
+          src="poza6.jpeg"
+          alt="Pink to white ombré nails with glitter tips"
+          loading="lazy"
+        />
+        <div class="gallery-item-hover" aria-hidden="true">
+          <span>Pink Glitter Ombré</span>
+        </div>
+      </figure>
+
+      <figure class="gallery-item reveal reveal-delay-2" role="listitem" tabindex="0" aria-label="Purple shimmer nails">
+        <img
+          src="poza7.jpeg"
+          alt="Rich purple shimmer nail design"
+          loading="lazy"
+        />
+        <div class="gallery-item-hover" aria-hidden="true">
+          <span>Purple Shimmer</span>
+        </div>
+      </figure>
+
+      <figure class="gallery-item reveal reveal-delay-3" role="listitem" tabindex="0" aria-label="Stiletto ombré nails">
+        <img
+          src="poza8.jpeg"
+          alt="Stiletto nails with pink ombré and glitter"
+          loading="lazy"
+        />
+        <div class="gallery-item-hover" aria-hidden="true">
+          <span>Stiletto Ombré</span>
+        </div>
+      </figure>
+
+      <!-- Row 2 -->
+      <figure class="gallery-item reveal" role="listitem" tabindex="0" aria-label="Abstract swirl nail art">
+        <img
+          src="POZA2.jpeg"
+          alt="Modern abstract swirl nail art design"
+          loading="lazy"
+        />
+        <div class="gallery-item-hover" aria-hidden="true">
+          <span>Artistic Nail Art</span>
+        </div>
+      </figure>
+
+      <figure class="gallery-item reveal reveal-delay-1" role="listitem" tabindex="0" aria-label="Lavender glitter nails">
+        <img
+          src="POZA3.jpeg"
+          alt="Lavender nails with silver flake glitter"
+          loading="lazy"
+        />
+        <div class="gallery-item-hover" aria-hidden="true">
+          <span>Lavender Glitter</span>
+        </div>
+      </figure>
+
+      <figure class="gallery-item reveal reveal-delay-2" role="listitem" tabindex="0" aria-label="3D floral nail art">
+        <img
+          src="POZA4.jpeg"
+          alt="Powder blue nails with 3D floral art and gems"
+          loading="lazy"
+        />
+        <div class="gallery-item-hover" aria-hidden="true">
+          <span>3D Floral Design</span>
+        </div>
+      </figure>
+
+      <figure class="gallery-item reveal reveal-delay-3" role="listitem" tabindex="0" aria-label="Hot pink glitter nails">
+        <img
+          src="photo.jpeg"
+          alt="Hot pink glitter nail design"
+          loading="lazy"
+        />
+        <div class="gallery-item-hover" aria-hidden="true">
+          <span>Glitter Nails</span>
+        </div>
+      </figure>
+
+      <!-- Row 3 -->
+      <figure class="gallery-item reveal" role="listitem" tabindex="0" aria-label="French ombré long nails">
+        <img
+          src="wrwre.jpeg"
+          alt="Elegant long French ombré nails"
+          loading="lazy"
+        />
+        <div class="gallery-item-hover" aria-hidden="true">
+          <span>French Ombré</span>
+        </div>
+      </figure>
+
+      <figure class="gallery-item reveal reveal-delay-1" role="listitem" tabindex="0" aria-label="Olive chrome shimmer nails">
+        <img
+          src="rhmgdfss.jpeg"
+          alt="Olive green holographic shimmer nails"
+          loading="lazy"
+        />
+        <div class="gallery-item-hover" aria-hidden="true">
+          <span>Olive Chrome</span>
+        </div>
+      </figure>
+
+      <figure class="gallery-item reveal reveal-delay-2" role="listitem" tabindex="0" aria-label="Marble nail art with gems">
+        <img
+          src="ptorfdfd.jpeg"
+          alt="Marble nail art design with gems and gold stripe"
+          loading="lazy"
+        />
+        <div class="gallery-item-hover" aria-hidden="true">
+          <span>Marble &amp; Gems</span>
+        </div>
+      </figure>
+
+      <figure class="gallery-item reveal reveal-delay-3" role="listitem" tabindex="0" aria-label="Winter snowflake nail art">
+        <img
+          src="poxs.jpeg"
+          alt="Pink and white Christmas snowflake nail art"
+          loading="lazy"
+        />
+        <div class="gallery-item-hover" aria-hidden="true">
+          <span>Winter Nail Art</span>
+        </div>
+      </figure>
+
+      <!-- Row 4 -->
+      <figure class="gallery-item reveal" role="listitem" tabindex="0" aria-label="Holographic chrome nails">
+        <img
+          src="phptp.jpeg"
+          alt="Iridescent holographic chrome nails"
+          loading="lazy"
+        />
+        <div class="gallery-item-hover" aria-hidden="true">
+          <span>Holographic Chrome</span>
+        </div>
+      </figure>
+
+      <figure class="gallery-item reveal reveal-delay-1" role="listitem" tabindex="0" aria-label="Matching manicure and pedicure">
+        <img
+          src="o.jpg.jpeg"
+          alt="Matching white manicure and pedicure"
+          loading="lazy"
+        />
+        <div class="gallery-item-hover" aria-hidden="true">
+          <span>Mani &amp; Pedi</span>
+        </div>
+      </figure>
+
+      <figure class="gallery-item reveal reveal-delay-2" role="listitem" tabindex="0" aria-label="Sheer pink shimmer nails">
+        <img
+          src="jygjgh.jpeg"
+          alt="Sheer pink short nails with subtle shimmer"
+          loading="lazy"
+        />
+        <div class="gallery-item-hover" aria-hidden="true">
+          <span>Sheer Pink Shimmer</span>
+        </div>
+      </figure>
+
+      <figure class="gallery-item reveal reveal-delay-3" role="listitem" tabindex="0" aria-label="Pink and white ombré nails">
+        <img
+          src="hgjgjg.jpeg"
+          alt="Romantic pink to white ombré with glitter accent"
+          loading="lazy"
+        />
+        <div class="gallery-item-hover" aria-hidden="true">
+          <span>Pink &amp; White Ombré</span>
+        </div>
+      </figure>
+
+      <!-- Row 5 -->
+      <figure class="gallery-item reveal" role="listitem" tabindex="0" aria-label="Classic French manicure">
+        <img
+          src="fghgj.jpeg"
+          alt="Classic French manicure with clean white tips"
+          loading="lazy"
+        />
+        <div class="gallery-item-hover" aria-hidden="true">
+          <span>French Manicure</span>
+        </div>
+      </figure>
+
+      <figure class="gallery-item reveal reveal-delay-1" role="listitem" tabindex="0" aria-label="Pink ombré glitter tips">
+        <img
+          src="dsfds.jpeg"
+          alt="Pink ombré nails with iridescent glitter tips"
+          loading="lazy"
+        />
+        <div class="gallery-item-hover" aria-hidden="true">
+          <span>Pink Ombré Tips</span>
+        </div>
+      </figure>
+
+      <figure class="gallery-item reveal reveal-delay-2" role="listitem" tabindex="0" aria-label="Natural nude nail design">
+        <img
+          src="dgddsasd.jpeg"
+          alt="Soft natural nude matte nail design"
+          loading="lazy"
+        />
+        <div class="gallery-item-hover" aria-hidden="true">
+          <span>Natural Nude</span>
+        </div>
+      </figure>
+
+      <figure class="gallery-item reveal reveal-delay-3" role="listitem" tabindex="0" aria-label="Pastel coffin nail design">
+        <img
+          src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=600&q=80"
+          alt="Pastel coffin nails with delicate floral accents"
+          loading="lazy"
+        />
+        <div class="gallery-item-hover" aria-hidden="true">
+          <span>Pastel Coffin Nails</span>
+        </div>
+      </figure>
+
+    </div>
+
+    <!-- CTA -->
+    <div style="margin-top: 4rem;">
+      <a href="programare.html" class="btn-gold" style="opacity:1; transform:none; animation:none; display:inline-flex;">
+        Make an Appointment
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+  <footer class="footer" aria-label="Page footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <div class="logo" aria-label="La Belle">
+            <span class="logo-title">La Belle</span>
+            <span class="logo-subtitle">Beauty &amp; Nail Spa</span>
+          </div>
+          <p>A place where beauty and relaxation meet. We warmly welcome you to discover the La Belle experience.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="galerie.html">Gallery</a></li>
+            <li><a href="programare.html">Appointments</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Get in Touch</h4>
+          <div class="footer-contact">
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <span>440 Rayford Rd, Spring, TX 77386</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </span>
+              <span>+1 281-216-6471</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
+              <span>contact@labelle.ro</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 La Belle. All rights reserved.</span>
+        <span>Crafted with <span class="footer-gold">♥</span> for beauty</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
