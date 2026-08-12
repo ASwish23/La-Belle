@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="La Belle Services Menu — Explore our full range of manicure, pedicure, solar enhancements, waxing, massage, and kids treatments." />
+  <title>Services Menu | La Belle Beauty &amp; Nail Spa</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Tailwind CSS (utility classes for the services menu grid below) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: { preflight: false }, // keep the site's existing header/footer styles untouched
+      theme: {
+        extend: {
+          fontFamily: { display: ["Playfair Display", "serif"] },
+          colors: { skyline: "#8FD3F4" },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    .services-parallax {
+      background-image:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+        url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1920&q=80");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    @media (max-width: 768px) {
+      /* iOS Safari ignores fixed backgrounds; fall back to scroll for reliability */
+      .services-parallax { background-attachment: scroll; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================
+       HEADER
+  ======================================== -->
+  <header class="header" id="header">
+    <a href="index.html" class="logo" aria-label="La Belle — Home">
+      <span class="logo-title">La Belle</span>
+      <span class="logo-subtitle">Beauty &amp; Nail Spa</span>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav" id="nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="galerie.html" class="nav-link">Gallery</a>
+      <a href="programare.html" class="nav-link">Appointments</a>
+    </nav>
+  </header>
+
+
+  <!-- ========================================
+       SERVICES MENU — Parallax Glassmorphism Grid
+  ======================================== -->
+  <main>
+    <section class="services-parallax" aria-labelledby="services-menu-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-20 sm:py-28">
+
+        <div class="text-center mb-16 sm:mb-20">
+          <span class="uppercase tracking-[0.25em] text-skyline text-xs sm:text-sm font-semibold">La Belle</span>
+          <h1 id="services-menu-heading" class="font-display italic text-white text-4xl sm:text-5xl lg:text-6xl mt-3">Services Menu</h1>
+          <div class="w-16 h-[2px] bg-skyline mx-auto mt-6"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 items-stretch">
+
+          <!-- 1. Manicure Options -->
+          <article class="h-full flex flex-col bg-white/20 backdrop-blur-lg border border-black/10 rounded-md p-8 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_15px_40px_-10px_rgba(173,216,230,0.5)]">
+            <h2 class="font-display text-skyline text-2xl mb-6">Manicure Options</h2>
+            <ul class="space-y-3 text-black">
+              <li>Classic</li>
+              <li>Deluxe</li>
+              <li>Ultimate</li>
+            </ul>
+          </article>
+
+          <!-- 2. Pedicure Options -->
+          <article class="h-full flex flex-col bg-white/20 backdrop-blur-lg border border-black/10 rounded-md p-8 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_15px_40px_-10px_rgba(173,216,230,0.5)]">
+            <h2 class="font-display text-skyline text-2xl mb-6">Pedicure Options</h2>
+            <ul class="space-y-3 text-black">
+              <li>Signature Pedi</li>
+              <li>Deluxe Pedi</li>
+              <li>Ultimate Pedi</li>
+              <li>Tropical Pedi</li>
+              <li>Volcano Rose Gold / Hem CBD Spa Pedicure</li>
+            </ul>
+          </article>
+
+          <!-- 3. Solar & Enhancements -->
+          <article class="h-full flex flex-col bg-white/20 backdrop-blur-lg border border-black/10 rounded-md p-8 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_15px_40px_-10px_rgba(173,216,230,0.5)]">
+            <h2 class="font-display text-skyline text-2xl mb-6">Solar &amp; Enhancements</h2>
+            <ul class="space-y-3 text-black">
+              <li>Regular Polish</li>
+              <li>Ombre</li>
+              <li>Pink &amp; White</li>
+              <li>Color / Mood Powder</li>
+              <li>Gel Polish</li>
+              <li>Dipping Powder</li>
+              <li>Builder Gel</li>
+            </ul>
+          </article>
+
+          <!-- 4. Side Services -->
+          <article class="h-full flex flex-col bg-white/20 backdrop-blur-lg border border-black/10 rounded-md p-8 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_15px_40px_-10px_rgba(173,216,230,0.5)]">
+            <h2 class="font-display text-skyline text-2xl mb-6">Side Services</h2>
+            <ul class="space-y-3 text-black">
+              <li>Polish Change</li>
+              <li>Soak Off</li>
+              <li>Paraffin Wax</li>
+              <li>Nail Art &amp; French</li>
+              <li>Gel Add-On</li>
+              <li>Cat Eyes</li>
+              <li>Unique Shapes</li>
+            </ul>
+          </article>
+
+          <!-- 5. Waxing -->
+          <article class="h-full flex flex-col bg-white/20 backdrop-blur-lg border border-black/10 rounded-md p-8 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_15px_40px_-10px_rgba(173,216,230,0.5)]">
+            <h2 class="font-display text-skyline text-2xl mb-6">Waxing</h2>
+            <div class="grid grid-cols-2 gap-x-6">
+              <div>
+                <h3 class="text-black font-semibold text-sm uppercase tracking-wide mb-2">Face</h3>
+                <ul class="space-y-3 text-black">
+                  <li>Eyebrows</li>
+                  <li>Lip</li>
+                  <li>Chin</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-black font-semibold text-sm uppercase tracking-wide mb-2">Body</h3>
+                <ul class="space-y-3 text-black">
+                  <li>Arms</li>
+                  <li>Under arm</li>
+                  <li>Bikini</li>
+                  <li>Brazilian</li>
+                  <li>Chest</li>
+                  <li>Full back</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. Massage & Kids -->
+          <article class="h-full flex flex-col bg-white/20 backdrop-blur-lg border border-black/10 rounded-md p-8 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_15px_40px_-10px_rgba(173,216,230,0.5)]">
+            <h2 class="font-display text-skyline text-2xl mb-6">Massage &amp; Kids</h2>
+            <ul class="space-y-3 text-black">
+              <li>Swedish Massage</li>
+              <li>Foot Reflexology</li>
+              <li>Kids Manicure &amp; Pedicure</li>
+            </ul>
+          </article>
+
+        </div>
+
+        <!-- Booking Button — same glassmorphism texture as the cards -->
+        <div class="text-center mt-16 sm:mt-20">
+          <a
+            href="programare.html"
+            class="inline-block bg-white/20 backdrop-blur-lg border border-black/10 rounded-md px-14 py-5 text-black font-semibold text-lg sm:text-xl tracking-wide transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_15px_40px_-10px_rgba(173,216,230,0.5)]"
+          >
+            Book your appointment
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+  <footer class="footer" aria-label="Page footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <div class="logo" aria-label="La Belle">
+            <span class="logo-title">La Belle</span>
+            <span class="logo-subtitle">Beauty &amp; Nail Spa</span>
+          </div>
+          <p>A place where beauty and relaxation meet. We warmly welcome you to discover the La Belle experience — a sanctuary of elegance and well-being.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="galerie.html">Gallery</a></li>
+            <li><a href="programare.html">Appointments</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Get in Touch</h4>
+          <div class="footer-contact">
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <span>440 Rayford Rd, Spring, TX 77386</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </span>
+              <span>+1 281-216-6471</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
+              <span>contact@labelle.ro</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </span>
+              <span>Mon – Sat: 09:00 – 19:00</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 La Belle. All rights reserved.</span>
+        <span>Crafted with <span class="footer-gold">♥</span> for beauty</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
