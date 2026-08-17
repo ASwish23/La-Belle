@@ -378,9 +378,9 @@ ul { list-style: none; }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -392,6 +392,9 @@ ul { list-style: none; }
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   position: relative;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .service-card::after {
   content: '';
@@ -414,7 +417,12 @@ ul { list-style: none; }
 }
 .service-card:hover .service-img { transform: scale(1.07); }
 
-.service-body { padding: 2rem 1.75rem 2.25rem; }
+.service-body {
+  padding: 2rem 1.75rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
 
 .service-icon {
   width: 52px; height: 52px;
@@ -453,6 +461,8 @@ ul { list-style: none; }
   border-bottom: 1px solid transparent;
   padding-bottom: 2px;
   transition: var(--transition);
+  margin-top: auto;
+  align-self: flex-start;
 }
 .service-cta:hover { border-bottom-color: var(--gold); gap: 10px; }
 
