@@ -129,22 +129,53 @@
               aria-required="true"
             >
               <option value="" disabled selected>Choose a service...</option>
-              <optgroup label="Manicure">
-                <option value="manicure-classic">Classic Manicure</option>
-                <option value="manicure-gel">Gel Manicure</option>
-                <option value="manicure-art">Bespoke Nail Art</option>
-                <option value="manicure-semipermanent">Semi-Permanent Polish</option>
+              <optgroup label="Manicure Options">
+                <option value="manicure-classic">Classic</option>
+                <option value="manicure-deluxe">Deluxe</option>
+                <option value="manicure-ultimate">Ultimate</option>
               </optgroup>
-              <optgroup label="Pedicure">
-                <option value="pedicure-classic">Classic Pedicure</option>
-                <option value="pedicure-spa">Spa Pedicure</option>
-                <option value="pedicure-gel">Gel Pedicure</option>
+              <optgroup label="Pedicure Options">
+                <option value="pedicure-signature">Signature Pedi</option>
+                <option value="pedicure-deluxe">Deluxe Pedi</option>
+                <option value="pedicure-ultimate">Ultimate Pedi</option>
+                <option value="pedicure-tropical">Tropical Pedi</option>
+                <option value="pedicure-volcano-rose-gold-cbd">Volcano Rose Gold / Hem CBD Spa Pedicure</option>
               </optgroup>
-              <optgroup label="Relaxation &amp; Spa">
-                <option value="spa-relaxare">Full Relaxation Treatment</option>
-                <option value="spa-pietre">Hot Stone Therapy</option>
-                <option value="spa-aromaterapie">Aromatherapy &amp; Massage</option>
-                <option value="spa-pachet">Premium Spa Package</option>
+              <optgroup label="Solar &amp; Enhancements">
+                <option value="solar-regular-polish">Regular Polish</option>
+                <option value="solar-ombre">Ombre</option>
+                <option value="solar-pink-white">Pink &amp; White</option>
+                <option value="solar-color-mood-powder">Color / Mood Powder</option>
+                <option value="solar-gel-polish">Gel Polish</option>
+                <option value="solar-dipping-powder">Dipping Powder</option>
+                <option value="solar-builder-gel">Builder Gel</option>
+              </optgroup>
+              <optgroup label="Spa &amp; Side Services">
+                <option value="spa-polish-change">Polish Change</option>
+                <option value="spa-soak-off">Soak Off</option>
+                <option value="spa-paraffin-wax">Paraffin Wax</option>
+                <option value="spa-nail-art-french">Nail Art &amp; French</option>
+                <option value="spa-gel-add-on">Gel Add-On</option>
+                <option value="spa-cat-eyes">Cat Eyes</option>
+                <option value="spa-unique-shapes">Unique Shapes</option>
+              </optgroup>
+              <optgroup label="Waxing — Face">
+                <option value="waxing-face-eyebrows">Eyebrows</option>
+                <option value="waxing-face-lip">Lip</option>
+                <option value="waxing-face-chin">Chin</option>
+              </optgroup>
+              <optgroup label="Waxing — Body">
+                <option value="waxing-body-arms">Arms</option>
+                <option value="waxing-body-underarm">Under arm</option>
+                <option value="waxing-body-bikini">Bikini</option>
+                <option value="waxing-body-brazilian">Brazilian</option>
+                <option value="waxing-body-chest">Chest</option>
+                <option value="waxing-body-full-back">Full back</option>
+              </optgroup>
+              <optgroup label="Massage &amp; Kids">
+                <option value="massage-swedish">Swedish Massage</option>
+                <option value="massage-foot-reflexology">Foot Reflexology</option>
+                <option value="massage-kids-mani-pedi">Kids Manicure &amp; Pedicure</option>
               </optgroup>
             </select>
           </div>
@@ -209,6 +240,7 @@
 
           <button type="submit" class="btn-submit">
             Submit Request
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
 
         </form>
@@ -232,21 +264,36 @@
       <div class="info-cards reveal">
 
         <div class="info-card">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <h4>Hours</h4>
-          <p>Mon – Sat<br />09:00 – 19:00<br />Sun<br />11:00 – 17:00</p>
+          <div class="service-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="info-card-body">
+            <h4>Hours</h4>
+            <div class="info-schedule">
+              <p class="info-schedule-row"><span class="info-day">Mon – Sat</span><span class="info-time">09:00 – 19:00</span></p>
+              <p class="info-schedule-row"><span class="info-day">Sun</span><span class="info-time">11:00 – 17:00</span></p>
+            </div>
+          </div>
         </div>
 
         <div class="info-card">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <h4>Phone</h4>
-          <p>+1 281-216-6471</p>
+          <div class="service-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="info-card-body">
+            <h4>Phone</h4>
+            <p>+1 281-216-6471</p>
+          </div>
         </div>
 
         <div class="info-card">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <h4>Location</h4>
-          <p>440 Rayford Rd<br />Spring, TX</p>
+          <div class="service-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="info-card-body">
+            <h4>Location</h4>
+            <p>440 Rayford Rd<br />Spring, TX</p>
+          </div>
         </div>
 
       </div>

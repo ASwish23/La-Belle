@@ -180,9 +180,9 @@
       let valid = true;
 
       required.forEach(field => {
-        field.style.borderBottomColor = ''; // reset
+        field.classList.remove('error');
         if (!field.value.trim()) {
-          field.style.borderBottomColor = '#e53e3e';
+          field.classList.add('error');
           valid = false;
         }
       });
@@ -205,7 +205,7 @@
     qsa('[required]', bookingFormEl).forEach(field => {
       field.addEventListener('input', () => {
         if (field.value.trim()) {
-          field.style.borderBottomColor = '';
+          field.classList.remove('error');
         }
       });
     });

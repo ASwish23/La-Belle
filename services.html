@@ -13,35 +13,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Tailwind CSS (utility classes for the services menu grid below) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      corePlugins: { preflight: false }, // keep the site's existing header/footer styles untouched
-      theme: {
-        extend: {
-          fontFamily: { display: ["Playfair Display", "serif"] },
-          colors: { skyline: "#8FD3F4" },
-        },
-      },
-    };
-  </script>
-
-  <style>
-    .services-parallax {
-      background-image:
-        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-        url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1920&q=80");
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-    }
-    @media (max-width: 768px) {
-      /* iOS Safari ignores fixed backgrounds; fall back to scroll for reliability */
-      .services-parallax { background-attachment: scroll; }
-    }
-  </style>
 </head>
 <body>
 
@@ -70,46 +41,85 @@
 
 
   <!-- ========================================
-       SERVICES MENU — Parallax Glassmorphism Grid
+       SERVICES MENU
   ======================================== -->
   <main>
-    <section class="services-parallax" aria-labelledby="services-menu-heading">
-      <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-20 sm:py-28">
+    <section class="section services" style="background: var(--white);" aria-labelledby="services-heading">
+      <span class="section-label">Our Menu</span>
+      <h1 class="section-title" id="services-heading">Services &amp; Pricing</h1>
+      <div class="divider" aria-hidden="true"></div>
+      <p class="section-desc" style="margin: 0 auto 3.5rem;">
+        Browse our full menu of nail, spa, and wellness treatments — every service crafted with premium products, expert technique, and meticulous care.
+      </p>
 
-        <div class="text-center mb-16 sm:mb-20">
-          <span class="uppercase tracking-[0.25em] text-skyline text-xs sm:text-sm font-semibold">La Belle</span>
-          <h1 id="services-menu-heading" class="font-display italic text-white text-4xl sm:text-5xl lg:text-6xl mt-3">Services Menu</h1>
-          <div class="w-16 h-[2px] bg-skyline mx-auto mt-6"></div>
-        </div>
+      <div class="services-menu-grid">
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 items-stretch">
-
-          <!-- 1. Manicure Options -->
-          <article class="h-full flex flex-col bg-white/20 backdrop-blur-lg border border-black/10 rounded-md p-8 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_15px_40px_-10px_rgba(173,216,230,0.5)]">
-            <h2 class="font-display text-skyline text-2xl mb-6">Manicure Options</h2>
-            <ul class="space-y-3 text-black">
+        <!-- Card 1: Manicure Options -->
+        <article class="service-card reveal">
+          <div class="service-img-wrap">
+            <img
+              class="service-img"
+              src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=80"
+              alt="Manicure treatment at La Belle"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-body">
+            <div class="service-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6v3l1 2v13a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2V7l1-2V2z"/><line x1="9" y1="9" x2="15" y2="9"/></svg>
+            </div>
+            <h3 class="service-title">Manicure Options</h3>
+            <ul class="service-list">
               <li>Classic</li>
               <li>Deluxe</li>
               <li>Ultimate</li>
             </ul>
-          </article>
+            <a href="programare.html" class="service-cta">Book Now ➔</a>
+          </div>
+        </article>
 
-          <!-- 2. Pedicure Options -->
-          <article class="h-full flex flex-col bg-white/20 backdrop-blur-lg border border-black/10 rounded-md p-8 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_15px_40px_-10px_rgba(173,216,230,0.5)]">
-            <h2 class="font-display text-skyline text-2xl mb-6">Pedicure Options</h2>
-            <ul class="space-y-3 text-black">
+        <!-- Card 2: Pedicure Options -->
+        <article class="service-card reveal reveal-delay-1">
+          <div class="service-img-wrap">
+            <img
+              class="service-img"
+              src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=800&q=80"
+              alt="Spa pedicure treatment at La Belle"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-body">
+            <div class="service-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 1 5 5v3a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"/><path d="M5.5 14.5s-2 5.5 6.5 5.5 6.5-5.5 6.5-5.5"/></svg>
+            </div>
+            <h3 class="service-title">Pedicure Options</h3>
+            <ul class="service-list">
               <li>Signature Pedi</li>
               <li>Deluxe Pedi</li>
               <li>Ultimate Pedi</li>
               <li>Tropical Pedi</li>
               <li>Volcano Rose Gold / Hem CBD Spa Pedicure</li>
             </ul>
-          </article>
+            <a href="programare.html" class="service-cta">Book Now ➔</a>
+          </div>
+        </article>
 
-          <!-- 3. Solar & Enhancements -->
-          <article class="h-full flex flex-col bg-white/20 backdrop-blur-lg border border-black/10 rounded-md p-8 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_15px_40px_-10px_rgba(173,216,230,0.5)]">
-            <h2 class="font-display text-skyline text-2xl mb-6">Solar &amp; Enhancements</h2>
-            <ul class="space-y-3 text-black">
+        <!-- Card 3: Solar & Enhancements -->
+        <article class="service-card reveal">
+          <div class="service-img-wrap">
+            <img
+              class="service-img"
+              src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80"
+              alt="Nail enhancements and nail art at La Belle"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-body">
+            <div class="service-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20M9 3l3 6 3-6M9 9l3 12 3-12"/></svg>
+            </div>
+            <h3 class="service-title">Solar &amp; Enhancements</h3>
+            <ul class="service-list">
               <li>Regular Polish</li>
               <li>Ombre</li>
               <li>Pink &amp; White</li>
@@ -118,12 +128,26 @@
               <li>Dipping Powder</li>
               <li>Builder Gel</li>
             </ul>
-          </article>
+            <a href="programare.html" class="service-cta">Book Now ➔</a>
+          </div>
+        </article>
 
-          <!-- 4. Side Services -->
-          <article class="h-full flex flex-col bg-white/20 backdrop-blur-lg border border-black/10 rounded-md p-8 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_15px_40px_-10px_rgba(173,216,230,0.5)]">
-            <h2 class="font-display text-skyline text-2xl mb-6">Side Services</h2>
-            <ul class="space-y-3 text-black">
+        <!-- Card 4: Spa & Side Services -->
+        <article class="service-card reveal reveal-delay-1">
+          <div class="service-img-wrap">
+            <img
+              class="service-img"
+              src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80"
+              alt="Spa side services at La Belle"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-body">
+            <div class="service-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s-6 7-6 11a6 6 0 0 0 12 0c0-4-6-11-6-11z"/></svg>
+            </div>
+            <h3 class="service-title">Spa &amp; Side Services</h3>
+            <ul class="service-list">
               <li>Polish Change</li>
               <li>Soak Off</li>
               <li>Paraffin Wax</li>
@@ -132,55 +156,68 @@
               <li>Cat Eyes</li>
               <li>Unique Shapes</li>
             </ul>
-          </article>
+            <a href="programare.html" class="service-cta">Book Now ➔</a>
+          </div>
+        </article>
 
-          <!-- 5. Waxing -->
-          <article class="h-full flex flex-col bg-white/20 backdrop-blur-lg border border-black/10 rounded-md p-8 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_15px_40px_-10px_rgba(173,216,230,0.5)]">
-            <h2 class="font-display text-skyline text-2xl mb-6">Waxing</h2>
-            <div class="grid grid-cols-2 gap-x-6">
-              <div>
-                <h3 class="text-black font-semibold text-sm uppercase tracking-wide mb-2">Face</h3>
-                <ul class="space-y-3 text-black">
-                  <li>Eyebrows</li>
-                  <li>Lip</li>
-                  <li>Chin</li>
-                </ul>
-              </div>
-              <div>
-                <h3 class="text-black font-semibold text-sm uppercase tracking-wide mb-2">Body</h3>
-                <ul class="space-y-3 text-black">
-                  <li>Arms</li>
-                  <li>Under arm</li>
-                  <li>Bikini</li>
-                  <li>Brazilian</li>
-                  <li>Chest</li>
-                  <li>Full back</li>
-                </ul>
-              </div>
+        <!-- Card 5: Waxing -->
+        <article class="service-card reveal">
+          <div class="service-img-wrap">
+            <img
+              class="service-img"
+              src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80"
+              alt="Professional waxing and smooth skin care"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-body">
+            <div class="service-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
             </div>
-          </article>
+            <h3 class="service-title">Waxing</h3>
+            <span class="service-subheading">Face</span>
+            <ul class="service-list">
+              <li>Eyebrows</li>
+              <li>Lip</li>
+              <li>Chin</li>
+            </ul>
+            <span class="service-subheading">Body</span>
+            <ul class="service-list">
+              <li>Arms</li>
+              <li>Under arm</li>
+              <li>Bikini</li>
+              <li>Brazilian</li>
+              <li>Chest</li>
+              <li>Full back</li>
+            </ul>
+            <a href="programare.html" class="service-cta">Book Now ➔</a>
+          </div>
+        </article>
 
-          <!-- 6. Massage & Kids -->
-          <article class="h-full flex flex-col bg-white/20 backdrop-blur-lg border border-black/10 rounded-md p-8 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_15px_40px_-10px_rgba(173,216,230,0.5)]">
-            <h2 class="font-display text-skyline text-2xl mb-6">Massage &amp; Kids</h2>
-            <ul class="space-y-3 text-black">
+        <!-- Card 6: Massage & Kids -->
+        <article class="service-card reveal reveal-delay-1">
+          <div class="service-img-wrap">
+            <img
+              class="service-img"
+              src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80"
+              alt="Therapeutic massage and wellness"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-body">
+            <div class="service-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><circle cx="15" cy="9" r="3"/><path d="M12 17c3 0 5-1.5 5-3v-2H7v2c0 1.5 2 3 5 3z"/><path d="M12 3C6.48 3 2 7.48 2 13v7h2v-7c0-4.42 3.58-8 8-8s8 3.58 8 8v7h2v-7c0-5.52-4.48-10-10-10z"/></svg>
+            </div>
+            <h3 class="service-title">Massage &amp; Kids</h3>
+            <ul class="service-list">
               <li>Swedish Massage</li>
               <li>Foot Reflexology</li>
               <li>Kids Manicure &amp; Pedicure</li>
             </ul>
-          </article>
+            <a href="programare.html" class="service-cta">Book Now ➔</a>
+          </div>
+        </article>
 
-        </div>
-
-        <!-- Booking Button — same glassmorphism texture as the cards -->
-        <div class="text-center mt-16 sm:mt-20">
-          <a
-            href="programare.html"
-            class="inline-block bg-white/20 backdrop-blur-lg border border-black/10 rounded-md px-14 py-5 text-black font-semibold text-lg sm:text-xl tracking-wide transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_15px_40px_-10px_rgba(173,216,230,0.5)]"
-          >
-            Book your appointment
-          </a>
-        </div>
       </div>
     </section>
   </main>
