@@ -250,12 +250,13 @@
     closeBtn.setAttribute('aria-label', 'Close');
     closeBtn.style.cssText = [
       'position:absolute',
-      'top:1.25rem',
-      'right:1.5rem',
+      'top:0.75rem',
+      'right:0.75rem',
       'background:none',
       'border:none',
       'color:#fff',
       'font-size:1.6rem',
+      'padding:0.75rem',
       'cursor:pointer',
       'line-height:1',
       'opacity:0.7',
