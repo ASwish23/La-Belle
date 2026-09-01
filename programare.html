@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Book at La Belle — Reserve your spot at our premium beauty and nail spa salon. Our booking form is quick and easy." />
+  <meta name="description" content="Book at La Belle — Reserve your spot at our premium beauty and nail spa salon. Online booking is quick and easy." />
   <title>Appointments | La Belle Beauty &amp; Nail Spa</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -68,199 +68,33 @@
       <h2 class="section-title" style="text-align:center;">A La Belle Experience</h2>
       <div class="divider" aria-hidden="true"></div>
       <p class="section-desc" style="text-align:center; margin: 0 auto 0;">
-        Fill in the form below and our team will contact you as soon as possible to confirm your appointment. We look forward to welcoming you!
+        Book your appointment online in just a few clicks and our team will confirm the details shortly after. We look forward to welcoming you!
       </p>
     </div>
 
-    <div class="booking-form-wrap">
-      <div class="booking-form reveal">
-
-        <!-- Booking Form -->
-        <form id="bookingForm" novalidate aria-label="Booking form">
-
-          <!-- Nume + Telefon — side by side on desktop -->
-          <div class="form-row">
-
-            <div class="form-group">
-              <label class="form-label" for="fullName">
-                Full Name <span class="req" aria-hidden="true">*</span>
-              </label>
-              <input
-                class="form-control"
-                type="text"
-                id="fullName"
-                name="fullName"
-                placeholder="E.g.: Jane Smith"
-                autocomplete="name"
-                required
-                aria-required="true"
-              />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="phone">
-                Phone Number <span class="req" aria-hidden="true">*</span>
-              </label>
-              <input
-                class="form-control"
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="E.g.: +1 555 000 0000"
-                autocomplete="tel"
-                required
-                aria-required="true"
-                pattern="[0-9\s\+\-\(\)]{7,20}"
-              />
-            </div>
-
-          </div>
-
-          <!-- Serviciu dorit -->
-          <div class="form-group">
-            <label class="form-label" for="service">
-              Desired Service <span class="req" aria-hidden="true">*</span>
-            </label>
-            <select
-              class="form-control"
-              id="service"
-              name="service"
-              required
-              aria-required="true"
-            >
-              <option value="" disabled selected>Choose a service...</option>
-              <optgroup label="Manicure Options">
-                <option value="manicure-classic">Classic</option>
-                <option value="manicure-deluxe">Deluxe</option>
-                <option value="manicure-ultimate">Ultimate</option>
-              </optgroup>
-              <optgroup label="Pedicure Options">
-                <option value="pedicure-signature">Signature Pedi</option>
-                <option value="pedicure-deluxe">Deluxe Pedi</option>
-                <option value="pedicure-ultimate">Ultimate Pedi</option>
-                <option value="pedicure-tropical">Tropical Pedi</option>
-                <option value="pedicure-volcano-rose-gold-cbd">Volcano Rose Gold / Hem CBD Spa Pedicure</option>
-              </optgroup>
-              <optgroup label="Solar &amp; Enhancements">
-                <option value="solar-regular-polish">Regular Polish</option>
-                <option value="solar-ombre">Ombre</option>
-                <option value="solar-pink-white">Pink &amp; White</option>
-                <option value="solar-color-mood-powder">Color / Mood Powder</option>
-                <option value="solar-gel-polish">Gel Polish</option>
-                <option value="solar-dipping-powder">Dipping Powder</option>
-                <option value="solar-builder-gel">Builder Gel</option>
-              </optgroup>
-              <optgroup label="Spa &amp; Side Services">
-                <option value="spa-polish-change">Polish Change</option>
-                <option value="spa-soak-off">Soak Off</option>
-                <option value="spa-paraffin-wax">Paraffin Wax</option>
-                <option value="spa-nail-art-french">Nail Art &amp; French</option>
-                <option value="spa-gel-add-on">Gel Add-On</option>
-                <option value="spa-cat-eyes">Cat Eyes</option>
-                <option value="spa-unique-shapes">Unique Shapes</option>
-              </optgroup>
-              <optgroup label="Waxing — Face">
-                <option value="waxing-face-eyebrows">Eyebrows</option>
-                <option value="waxing-face-lip">Lip</option>
-                <option value="waxing-face-chin">Chin</option>
-              </optgroup>
-              <optgroup label="Waxing — Body">
-                <option value="waxing-body-arms">Arms</option>
-                <option value="waxing-body-underarm">Under arm</option>
-                <option value="waxing-body-bikini">Bikini</option>
-                <option value="waxing-body-brazilian">Brazilian</option>
-                <option value="waxing-body-chest">Chest</option>
-                <option value="waxing-body-full-back">Full back</option>
-              </optgroup>
-              <optgroup label="Massage &amp; Kids">
-                <option value="massage-swedish">Swedish Massage</option>
-                <option value="massage-foot-reflexology">Foot Reflexology</option>
-                <option value="massage-kids-mani-pedi">Kids Manicure &amp; Pedicure</option>
-              </optgroup>
-            </select>
-          </div>
-
-          <!-- Data dorită -->
-          <div class="form-group">
-            <label class="form-label" for="date">
-              Preferred Date <span class="req" aria-hidden="true">*</span>
-            </label>
-            <input
-              class="form-control"
-              type="date"
-              id="date"
-              name="date"
-              required
-              aria-required="true"
-            />
-          </div>
-
-          <!-- Ora preferată -->
-          <div class="form-group">
-            <label class="form-label" for="time">Preferred Time</label>
-            <select class="form-control" id="time" name="time">
-              <option value="" disabled selected>Choose a time...</option>
-              <option value="09:00">09:00</option>
-              <option value="09:30">09:30</option>
-              <option value="10:00">10:00</option>
-              <option value="10:30">10:30</option>
-              <option value="11:00">11:00</option>
-              <option value="11:30">11:30</option>
-              <option value="12:00">12:00</option>
-              <option value="13:00">13:00</option>
-              <option value="13:30">13:30</option>
-              <option value="14:00">14:00</option>
-              <option value="14:30">14:30</option>
-              <option value="15:00">15:00</option>
-              <option value="15:30">15:30</option>
-              <option value="16:00">16:00</option>
-              <option value="16:30">16:30</option>
-              <option value="17:00">17:00</option>
-              <option value="17:30">17:30</option>
-              <option value="18:00">18:00</option>
-            </select>
-          </div>
-
-          <!-- Mesaj -->
-          <div class="form-group">
-            <label class="form-label" for="message">Message / Additional Details</label>
-            <textarea
-              class="form-control"
-              id="message"
-              name="message"
-              placeholder="Tell us any details that would help us deliver the perfect experience for you..."
-              rows="4"
-            ></textarea>
-          </div>
-
-          <!-- Note -->
-          <p style="font-size:0.8rem; color:#8a9ab5; margin-bottom:1.5rem; line-height:1.7;">
-            <span style="color:var(--gold);">*</span> Marked fields are required. We will confirm your appointment by phone within 24 hours.
-          </p>
-
-          <button type="submit" class="btn-submit">
-            Submit Request
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
-
-        </form>
-
-        <!-- Success Message (hidden by default) -->
-        <div class="form-success" id="formSuccess" aria-live="polite" aria-atomic="true">
-          <div class="success-icon" aria-hidden="true">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          </div>
-          <h3 class="success-title">Request Sent Successfully!</h3>
-          <p class="success-text">
-            Thank you for your booking. The La Belle team will reach out to you shortly to confirm the details of your session.<br /><br />
-            We can't wait to welcome you!
-          </p>
-          <a href="index.html" class="success-back">← Back to Home</a>
+    <!-- Instant Online Booking (Setmore) -->
+    <div class="setmore-booking-wrap reveal">
+      <div class="setmore-booking-card">
+        <div class="setmore-booking-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         </div>
-
+        <h3>Book Instantly Online</h3>
+        <p>Pick your date and time in real time with our secure online scheduler.</p>
+        <script id="anywhere_book_now_script" src="https://assets.setmore.com/integration/book-now/live/v1/anywhere-book-now.js"></script>
+        <button
+          id="Anywhere_button_iframe"
+          class="anywhere-book-now-button"
+          data-booking-url="https://labelleoaq2.setmore.com"
+          data-new-tab="false"
+        >
+          Book Now
+        </button>
       </div>
+    </div>
 
-      <!-- Info Cards below form -->
+    <div class="booking-info-wrap">
+
+      <!-- Info Cards -->
       <div class="info-cards reveal">
 
         <div class="info-card">

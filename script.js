@@ -166,52 +166,6 @@
   }
 
   /* =============================================
-     BOOKING FORM — validation & success state
-  ============================================= */
-  const bookingFormEl = qs('#bookingForm');
-  const formSuccess   = qs('.form-success');
-
-  if (bookingFormEl) {
-    bookingFormEl.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      // Basic client-side validation
-      const required = qsa('[required]', bookingFormEl);
-      let valid = true;
-
-      required.forEach(field => {
-        field.classList.remove('error');
-        if (!field.value.trim()) {
-          field.classList.add('error');
-          valid = false;
-        }
-      });
-
-      if (!valid) {
-        const first = required.find(f => !f.value.trim());
-        if (first) first.focus();
-        return;
-      }
-
-      // Simulate submission — hide form, show success
-      bookingFormEl.style.display = 'none';
-      if (formSuccess) {
-        formSuccess.classList.add('show');
-        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    });
-
-    // Re-validate field on input after error
-    qsa('[required]', bookingFormEl).forEach(field => {
-      field.addEventListener('input', () => {
-        if (field.value.trim()) {
-          field.classList.remove('error');
-        }
-      });
-    });
-  }
-
-  /* =============================================
      GALLERY LIGHTBOX (simple, accessible)
   ============================================= */
   const galleryItems = qsa('.gallery-item');
