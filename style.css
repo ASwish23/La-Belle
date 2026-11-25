@@ -1,11 +1,12 @@
 /* ================================================
-   LA BELLE — Beauty & Nail Spa
+   LA BELLE — Nails & Relaxation
    Main Stylesheet
    ================================================ */
 
-/* ===== GOOGLE FONTS & CSS VARIABLES ===== */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
-
+/* ===== CSS VARIABLES =====
+   Fonts (Cinzel, Playfair Display, Lato) are loaded by the <link> tag in
+   each page's <head>, so they aren't @import-ed here: doing both made
+   every visitor download the font stylesheet twice and delayed rendering. */
 :root {
   --white:       #FFFFFF;
   --gold:        #C5A059;
@@ -185,10 +186,16 @@ ul { list-style: none; }
   inset: 0;
   background: linear-gradient(
     160deg,
-    rgba(26, 54, 93, 0.72) 0%,
-    rgba(10, 20, 40, 0.5) 60%,
-    rgba(0, 0, 0, 0.35) 100%
+    rgba(51, 51, 51, 0.9) 0%,
+    rgba(0, 0, 0, 0.9) 100%
   );
+}
+
+/* Keeps hero text legible over the lighter overlay */
+.carousel-content .hero-title,
+.carousel-content .hero-subtitle,
+.carousel-content .hero-badge {
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
 
 /* Hero Content */
@@ -239,6 +246,16 @@ ul { list-style: none; }
   opacity: 0;
   transform: translateY(22px);
   animation: heroFadeUp 0.9s 0.8s ease forwards;
+}
+
+/* The badge sits inside the <h1> so the location ("Spring, TX") is part
+   of the page's main heading for Google, but it keeps its small-caps look */
+.hero-title .hero-badge {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 1.5rem;
+  font-family: 'Lato', sans-serif;
+  line-height: 1.7;
 }
 
 /* Gold Divider Line in Hero */
@@ -300,6 +317,13 @@ ul { list-style: none; }
 .dot.active {
   background: var(--gold);
   transform: scale(1.35);
+}
+/* Invisible larger tap area so the small dots are easy to hit on phones */
+.dot { position: relative; }
+.dot::after {
+  content: '';
+  position: absolute;
+  inset: -9px;
 }
 .dot:hover { background: rgba(255, 255, 255, 0.75); }
 
@@ -662,6 +686,91 @@ ul { list-style: none; }
   color: var(--text-body);
 }
 
+/* Reviews carousel — a native sideways-scrolling row with snap points,
+   so it swipes naturally on phones; script.js adds arrows + dots paging.
+   3 cards per view on desktop, 2 on tablet, 1 (with a peek) on phones. */
+.reviews-carousel {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.reviews-track {
+  --per-view: 3;
+  --gap: 2rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - (var(--per-view) - 1) * var(--gap)) / var(--per-view));
+  gap: var(--gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  padding: 0.75rem 0.25rem 1.75rem; /* room for the card lift + shadow */
+  scrollbar-width: none;
+}
+.reviews-track::-webkit-scrollbar { display: none; }
+.reviews-track:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: var(--radius); }
+
+.reviews-track .testimonial-card {
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+}
+.reviews-track .testimonial-text { flex-grow: 1; }
+
+.reviews-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+.reviews-controls[hidden] { display: none; }
+.reviews-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1px solid var(--gray-border);
+  color: var(--navy);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.reviews-btn:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--white);
+}
+.reviews-btn:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+
+.reviews-dots {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.reviews-dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--gray-border);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.reviews-dot::after { content: ''; position: absolute; inset: -9px; } /* bigger tap area */
+.reviews-dot:hover { background: var(--gold-light); }
+.reviews-dot.active { background: var(--gold); transform: scale(1.35); }
+
+.reviews-more {
+  margin-top: 2.25rem;
+  align-self: auto;
+}
+
 /* =====================================================
    SERVICES MENU GRID (services.html)
    Cards list wildly different numbers of options (3 to
@@ -893,8 +1002,75 @@ ul { list-style: none; }
 
 .booking-info-wrap {
   width: 100%;
-  max-width: 720px;
+  max-width: 900px;
   padding: 2.5rem 6% 6rem;
+}
+
+/* Google Map embed (below info cards) */
+.map-embed {
+  margin-top: 1.5rem;
+  border: 1px solid var(--gray-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm, 0 2px 12px rgba(0, 0, 0, 0.08));
+}
+.map-embed iframe {
+  display: block;
+  width: 100%;
+  height: 400px;
+  border: 0;
+}
+/* Shown instead of the map until the visitor allows Google's cookies */
+.map-placeholder {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  padding: 2rem;
+  text-align: center;
+  background: var(--gray-bg);
+}
+.map-placeholder p {
+  font-size: 0.92rem;
+  color: var(--text-body);
+  max-width: 340px;
+}
+.map-placeholder-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem 1.5rem;
+}
+.map-placeholder-btn {
+  background: var(--gold);
+  color: var(--white);
+  border: 2px solid var(--gold);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.map-placeholder-btn:hover { background: transparent; color: var(--gold); }
+.map-placeholder-actions a {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--navy);
+  border-bottom: 1px solid var(--gold);
+}
+.map-placeholder-actions a:hover { color: var(--gold); }
+.map-embed.is-loaded .map-placeholder { display: none; }
+.map-embed iframe[hidden] { display: none; }
+
+@media (max-width: 768px) {
+  .map-embed iframe,
+  .map-placeholder { height: 300px; }
 }
 
 /* Info Cards — icon-left / content-right, so each card's visual
@@ -902,14 +1078,16 @@ ul { list-style: none; }
 .info-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  grid-auto-rows: 1fr;
+  gap: 1.25rem;
   margin-top: 1.5rem;
 }
 .info-card {
   background: var(--white);
   border: 1px solid var(--gray-border);
   border-radius: var(--radius);
-  padding: 1.35rem 1.1rem;
+  padding: 2rem 1.4rem;
+  min-height: 150px;
   text-align: center;
   box-shadow: var(--shadow-sm);
   position: relative;
@@ -948,7 +1126,7 @@ ul { list-style: none; }
 .info-card-body { min-width: 0; }
 
 .info-card h4 {
-  font-size: 0.62rem;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -957,11 +1135,13 @@ ul { list-style: none; }
   white-space: nowrap;
 }
 .info-card p {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: var(--navy);
   line-height: 1.5;
 }
+.info-card p a { transition: color 0.3s ease; }
+.info-card p a:hover { color: var(--gold); }
 
 /* Hours schedule — each day-range pairs tightly with its own
    time-range, with clear air between the two rows */
@@ -981,12 +1161,12 @@ ul { list-style: none; }
   gap: 0.1rem;
 }
 .info-day {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: var(--navy);
 }
 .info-time {
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: 400;
   color: var(--text-body);
   white-space: nowrap;
@@ -1042,7 +1222,7 @@ ul { list-style: none; }
 }
 .footer-links a:hover { color: var(--gold); transform: translateX(5px); }
 
-.footer-contact { display: flex; flex-direction: column; gap: 1rem; }
+.footer-contact { display: flex; flex-direction: column; gap: 1rem; font-style: normal; }
 .contact-item {
   display: flex;
   align-items: flex-start;
@@ -1050,6 +1230,8 @@ ul { list-style: none; }
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.55);
 }
+a.contact-item { transition: color 0.3s ease; }
+a.contact-item:hover { color: var(--gold); }
 .contact-icon {
   color: var(--gold);
   flex-shrink: 0;
@@ -1060,13 +1242,152 @@ ul { list-style: none; }
 
 .footer-bottom {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  gap: 0.75rem 2rem;
   padding-top: 2.25rem;
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.45);
 }
 .footer-gold { color: var(--gold); }
+
+/* Privacy Policy · Cookie Settings */
+.footer-legal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.footer-legal a,
+.footer-legal-btn {
+  color: rgba(255, 255, 255, 0.65);
+  transition: color 0.3s ease;
+}
+.footer-legal-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  cursor: pointer;
+}
+.footer-legal a:hover,
+.footer-legal-btn:hover { color: var(--gold); }
+
+/* =====================================================
+   COOKIE BANNER (built by script.js)
+===================================================== */
+.cookie-banner {
+  position: fixed;
+  left: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 2000;
+  width: calc(100% - 3rem);
+  max-width: 420px;
+  background: var(--white);
+  border-top: 3px solid var(--gold);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: 1.5rem 1.5rem 1.35rem;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+.cookie-banner.is-visible { transform: translateY(0); opacity: 1; }
+.cookie-banner[hidden] { display: none; }
+
+.cookie-banner-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+.cookie-banner-text {
+  font-size: 0.87rem;
+  line-height: 1.65;
+  color: var(--text-body);
+  margin-bottom: 1.1rem;
+}
+.cookie-banner-text a {
+  color: var(--navy);
+  font-weight: 700;
+  border-bottom: 1px solid var(--gold);
+}
+.cookie-banner-text a:hover { color: var(--gold); }
+
+.cookie-banner-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+.cookie-btn {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 2px solid var(--gold);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.cookie-btn-accept { background: var(--gold); color: var(--white); }
+.cookie-btn-accept:hover { background: var(--gold-dark); border-color: var(--gold-dark); }
+.cookie-btn-essential { background: transparent; color: var(--navy); }
+.cookie-btn-essential:hover { background: var(--gold-bg); }
+.cookie-btn:focus-visible,
+.footer-legal-btn:focus-visible,
+.map-placeholder-btn:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+
+/* =====================================================
+   LEGAL PAGE (privacy.html)
+===================================================== */
+.legal-page {
+  max-width: 780px;
+  margin: var(--header-h) auto 0; /* clear the fixed header */
+  padding: 3.5rem 6% 6rem;
+  color: var(--text-body);
+}
+.legal-updated {
+  font-size: 0.85rem;
+  color: var(--text-body);
+  margin-bottom: 2.5rem;
+}
+.legal-page h2 {
+  font-size: 1.45rem;
+  color: var(--navy);
+  margin: 2.5rem 0 0.85rem;
+}
+.legal-page h3 {
+  font-size: 1.1rem;
+  color: var(--navy);
+  margin: 1.5rem 0 0.6rem;
+}
+.legal-page p,
+.legal-page li {
+  font-size: 0.97rem;
+  line-height: 1.85;
+}
+.legal-page p { margin-bottom: 1rem; }
+.legal-page ul {
+  list-style: disc;
+  padding-left: 1.4rem;
+  margin-bottom: 1rem;
+}
+.legal-page li { margin-bottom: 0.4rem; }
+.legal-page a {
+  color: var(--navy);
+  font-weight: 700;
+  border-bottom: 1px solid var(--gold);
+}
+.legal-page a:hover { color: var(--gold); }
+.legal-page .legal-contact {
+  background: var(--gray-bg);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem 1.5rem;
+  font-style: normal;
+  line-height: 1.85;
+}
 
 /* =====================================================
    SCROLL REVEAL ANIMATION
@@ -1095,6 +1416,14 @@ ul { list-style: none; }
    RESPONSIVE — Tablet (≤ 1024px)
 ===================================================== */
 @media (max-width: 1024px) {
+  /* Logo + 4 links at desktop spacing overflow the header on
+     small tablets (~770–900px wide), so tighten the nav */
+  .nav { gap: 1.6rem; }
+  .nav-link { letter-spacing: 1.8px; }
+
+  .carousel-btn.prev { left: 1.25rem; }
+  .carousel-btn.next { right: 1.25rem; }
+
   .gallery-grid { columns: 3; }
   .footer-top { grid-template-columns: 1fr 1fr; }
   .footer-brand { grid-column: 1 / -1; }
@@ -1107,6 +1436,8 @@ ul { list-style: none; }
   .about-points li { justify-content: center; }
 
   .testimonials-grid { grid-template-columns: 1fr 1fr; max-width: 700px; }
+
+  .reviews-track { --per-view: 2; --gap: 1.5rem; }
 }
 
 /* =====================================================
@@ -1150,6 +1481,13 @@ ul { list-style: none; }
     height: 44px;
   }
   .carousel-btn svg { width: 18px; height: 18px; }
+  /* On phones the arrows sat on top of the hero text, so move them
+     down to the bottom edge, either side of the dots */
+  .carousel-btn {
+    top: auto;
+    bottom: 0.9rem;
+    transform: none;
+  }
   .carousel-btn.prev { left: 0.75rem; }
   .carousel-btn.next { right: 0.75rem; }
   .carousel-dots { bottom: 1.5rem; gap: 8px; }
@@ -1162,6 +1500,9 @@ ul { list-style: none; }
   .services-menu-grid { column-count: 1; max-width: 480px; }
 
   .testimonials-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+  /* One card per view, with the next card peeking in to invite a swipe */
+  .reviews-track { --gap: 1rem; grid-auto-columns: 86%; }
+  .reviews-track .testimonial-card { padding: 2.25rem 1.6rem 2rem; }
 
   .info-cards { grid-template-columns: 1fr; max-width: 480px; margin: 1.5rem auto 0; }
   .info-card { padding: 1.5rem 1.4rem; gap: 1rem; }
@@ -1180,7 +1521,17 @@ ul { list-style: none; }
     gap: 2.5rem;
   }
   .footer-brand { grid-column: unset; }
-  .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+  .footer-bottom { flex-direction: column; gap: 0.6rem; text-align: center; }
+
+  .cookie-banner {
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    width: auto;
+    max-width: none;
+  }
+
+  .legal-page { padding: 2.5rem 5% 4.5rem; }
 }
 
 /* =====================================================
@@ -1188,7 +1539,43 @@ ul { list-style: none; }
 ===================================================== */
 @media (max-width: 480px) {
   .logo-title { font-size: 1.45rem; }
+  .logo-subtitle { letter-spacing: 3.5px; }
   .gallery-grid { columns: 1; }
   .hero-title { font-size: 2rem; }
+  .hero-title .hero-badge { letter-spacing: 3.5px; }
   .btn-gold { padding: 0.9rem 2rem; }
+  .page-hero { height: 220px; }
+  .setmore-booking-card { padding: 2rem 1.25rem; }
+}
+
+@media (max-width: 380px) {
+  .cookie-banner-actions { flex-direction: column; }
+}
+
+/* =====================================================
+   TOUCH SCREENS — no hover, so show gallery captions
+   and skip lift-on-hover effects that "stick" after a tap
+===================================================== */
+@media (hover: none) {
+  .gallery-item-hover { opacity: 1; background: linear-gradient(to top, rgba(26,54,93,0.6) 0%, transparent 45%); }
+  .service-card:hover,
+  .testimonial-card:hover,
+  .info-card:hover { transform: none; }
+  .service-card:hover .service-img,
+  .gallery-item:hover img { transform: none; }
+}
+
+/* =====================================================
+   REDUCED MOTION — respect the OS "reduce motion" setting
+===================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html,
+  .reviews-track { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+  .reveal { opacity: 1; transform: none; }
 }

@@ -3,18 +3,117 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="La Belle — Your premium beauty and nail spa salon. Manicure, pedicure, and exceptional relaxation treatments." />
-  <title>La Belle | Beauty &amp; Nail Spa</title>
+  <title>La Belle Nails &amp; Relaxation | Nail Salon in Spring, TX</title>
+  <meta name="description" content="Nail salon in Spring, TX offering manicures, pedicures, gel, dip powder, waxing and massage. Book online at La Belle Nails &amp; Relaxation, 440 Rayford Rd." />
+  <!-- SITE URL: replace every https://www.example.com with the real domain before going live -->
+  <link rel="canonical" href="https://www.example.com/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#1A365D" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <!-- Social sharing (Facebook, WhatsApp, iMessage, X) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="La Belle Nails &amp; Relaxation" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="La Belle Nails &amp; Relaxation | Nail Salon in Spring, TX" />
+  <meta property="og:description" content="Manicures, pedicures, gel, dip powder, waxing and massage at 440 Rayford Rd, Spring, TX. Book online in a few clicks." />
+  <meta property="og:url" content="https://www.example.com/" />
+  <meta property="og:image" content="https://www.example.com/images-salon/IMG_20255.jpg" />
+  <meta property="og:image:width" content="1448" />
+  <meta property="og:image:height" content="1086" />
+  <meta property="og:image:alt" content="La Belle salon lobby with the welcome heart wall and polish bar" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://images.unsplash.com" />
 
+  <!-- Start downloading the first hero photo right away (largest element on the page) -->
+  <link rel="preload" as="image" href="images-salon/IMG_20255.jpg" imagesrcset="images-salon/IMG_20255-800.jpg 800w, images-salon/IMG_20255.jpg 1448w" imagesizes="100vw" fetchpriority="high" />
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Business details for Google (local search, Maps, rich results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "NailSalon",
+        "@id": "https://www.example.com/#salon",
+        "name": "La Belle Nails & Relaxation",
+        "alternateName": ["LaBelle", "LaBelle Nail Bar"],
+        "description": "Nail salon and spa in Spring, TX offering manicures, pedicures, gel and dip powder nails, nail art, waxing, massage and kids services.",
+        "url": "https://www.example.com/",
+        "image": [
+          "https://www.example.com/images-salon/IMG_20255.jpg",
+          "https://www.example.com/images-salon/IMG_20555.jpg",
+          "https://www.example.com/images-salon/IMG_20411.jpg"
+        ],
+        "telephone": "+1-281-216-6471",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "440 Rayford Rd",
+          "addressLocality": "Spring",
+          "addressRegion": "TX",
+          "postalCode": "77386",
+          "addressCountry": "US"
+        },
+        "hasMap": "https://www.google.com/maps/search/?api=1&query=La+Belle+440+Rayford+Rd+Spring+TX+77386",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "09:00",
+            "closes": "19:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Sunday",
+            "opens": "11:00",
+            "closes": "17:00"
+          }
+        ],
+        "potentialAction": {
+          "@type": "ReserveAction",
+          "name": "Book an appointment",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://labelleoaq2.setmore.com",
+            "actionPlatform": ["https://schema.org/DesktopWebPlatform", "https://schema.org/MobileWebPlatform"]
+          }
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Nail & Spa Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Manicure" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Spa Pedicure" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gel Polish" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dipping Powder Nails" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Solar Nails & Enhancements" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Nail Art" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Face & Body Waxing" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Swedish Massage" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Foot Reflexology" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kids Manicure & Pedicure" } }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.example.com/#website",
+        "url": "https://www.example.com/",
+        "name": "La Belle Nails & Relaxation",
+        "publisher": { "@id": "https://www.example.com/#salon" }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -24,7 +123,7 @@
   <header class="header" id="header">
     <a href="index.html" class="logo" aria-label="La Belle — Home">
       <span class="logo-title">La Belle</span>
-      <span class="logo-subtitle">Beauty &amp; Nail Spa</span>
+      <span class="logo-subtitle">Nails &amp; Relaxation</span>
     </a>
 
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -53,8 +152,11 @@
 
         <div class="carousel-slide">
           <img
-            src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1920&q=80"
-            alt="Elegant La Belle salon interior"
+            src="images-salon/IMG_20255.jpg"
+            srcset="images-salon/IMG_20255-800.jpg 800w, images-salon/IMG_20255.jpg 1448w"
+            sizes="100vw"
+            width="1448" height="1086"
+            alt="La Belle salon lobby with the welcome heart wall, reception desk and polish bar"
             loading="eager"
             fetchpriority="high"
           />
@@ -63,8 +165,11 @@
 
         <div class="carousel-slide">
           <img
-            src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1920&q=80"
-            alt="Luxury artistic manicure"
+            src="images-salon/IMG_20311.jpg"
+            srcset="images-salon/IMG_20311-800.jpg 800w, images-salon/IMG_20311.jpg 1536w"
+            sizes="100vw"
+            width="1536" height="1024"
+            alt="La Belle welcome heart wall of blue and white flowers above the reception desk"
             loading="lazy"
           />
           <div class="carousel-overlay" aria-hidden="true"></div>
@@ -72,8 +177,35 @@
 
         <div class="carousel-slide">
           <img
-            src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1920&q=80"
-            alt="Relaxation and spa treatment"
+            src="images-salon/IMG_20500.jpg"
+            srcset="images-salon/IMG_20500-800.jpg 800w, images-salon/IMG_20500.jpg 1448w"
+            sizes="100vw"
+            width="1448" height="1086"
+            alt="Manicure stations in front of the La Belle polish bar wall"
+            loading="lazy"
+          />
+          <div class="carousel-overlay" aria-hidden="true"></div>
+        </div>
+
+        <div class="carousel-slide">
+          <img
+            src="images-salon/IMG_20555.jpg"
+            srcset="images-salon/IMG_20555-800.jpg 800w, images-salon/IMG_20555.jpg 1423w"
+            sizes="100vw"
+            width="1423" height="1086"
+            alt="La Belle Nail Bar with a wall of nail polish colors and black leather chairs"
+            loading="lazy"
+          />
+          <div class="carousel-overlay" aria-hidden="true"></div>
+        </div>
+
+        <div class="carousel-slide">
+          <img
+            src="images-salon/IMG_20411.jpg"
+            srcset="images-salon/IMG_20411-800.jpg 800w, images-salon/IMG_20411.jpg 1448w"
+            sizes="100vw"
+            width="1448" height="1086"
+            alt="Row of pedicure massage chairs leading to the salon entrance"
             loading="lazy"
           />
           <div class="carousel-overlay" aria-hidden="true"></div>
@@ -83,8 +215,10 @@
 
       <!-- Hero Content — fixed above all slides -->
       <div class="carousel-content">
-        <span class="hero-badge">Premium Beauty Salon</span>
-        <h1 class="hero-title">Discover your oasis of<br />relaxation and beauty.</h1>
+        <h1 class="hero-title">
+          <span class="hero-badge">Nail Salon &amp; Spa in Spring, TX</span>
+          Discover your oasis of<br />relaxation and beauty.
+        </h1>
         <div class="hero-divider" aria-hidden="true"></div>
         <p class="hero-subtitle">Unique experiences, impeccable care, and moments of true indulgence — crafted exclusively for you.</p>
         <a href="programare.html" class="btn-gold">
@@ -106,6 +240,8 @@
         <button class="dot active" role="tab" aria-label="Slide 1" aria-selected="true"></button>
         <button class="dot" role="tab" aria-label="Slide 2" aria-selected="false"></button>
         <button class="dot" role="tab" aria-label="Slide 3" aria-selected="false"></button>
+        <button class="dot" role="tab" aria-label="Slide 4" aria-selected="false"></button>
+        <button class="dot" role="tab" aria-label="Slide 5" aria-selected="false"></button>
       </div>
 
     </div>
@@ -123,7 +259,8 @@
         <img
           class="about-img"
           src="images/poza5.jpeg"
-          alt="Signature nail artistry at La Belle"
+          alt="Baby pink nails with crystal gem accents done at La Belle"
+          width="750" height="1000"
           loading="lazy"
         />
       </div>
@@ -133,7 +270,7 @@
         <h2 class="section-title" id="about-heading">Our Story</h2>
         <div class="divider left" aria-hidden="true"></div>
         <p class="section-desc" style="margin-bottom: 2rem;">
-          La Belle was born from a simple belief: beauty rituals should feel like a retreat, not a routine. From our hand-selected products to the calm of our treatment rooms, every detail is designed with one goal in mind — helping you leave feeling like the best version of yourself.
+          La Belle was born from a simple belief: beauty rituals should feel like a retreat, not a routine. At our nail salon on Rayford Road in Spring, TX, every detail — from our hand-selected products to the calm of our pedicure lounge — is designed with one goal in mind: helping you leave feeling like the best version of yourself.
         </p>
 
         <ul class="about-points">
@@ -175,7 +312,7 @@
     <h2 class="section-title" id="services-heading">Our Services</h2>
     <div class="divider" aria-hidden="true"></div>
     <p class="section-desc" style="margin: 0 auto 3.5rem;">
-      Every visit to La Belle is a complete experience — a beauty and wellness ritual designed to make you shine, inside and out.
+      Every visit to La Belle is a complete experience — manicures, pedicures, waxing and massage, each one a beauty and wellness ritual designed to make you shine, inside and out.
     </p>
 
     <div class="services-grid">
@@ -285,79 +422,148 @@
 
 
   <!-- ========================================
-       TESTIMONIALS
+       TESTIMONIALS — Google reviews carousel
+       Review text is copied word for word from Google (do not edit it).
+       A trailing "…" means Google showed the review truncated.
+       Carousel behaviour: script.js, REVIEWS CAROUSEL.
   ======================================== -->
   <section class="section testimonials" aria-labelledby="testimonials-heading">
-    <span class="section-label">What They Say</span>
+    <span class="section-label">Google Reviews</span>
     <h2 class="section-title" id="testimonials-heading">Kind Words From Our Clients</h2>
     <div class="divider" aria-hidden="true"></div>
 
-    <div class="testimonials-grid">
-
-      <article class="testimonial-card reveal">
-        <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
-        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
-        </div>
-        <p class="testimonial-text">
-          The Volcano Rose Gold pedicure is unlike anything I've tried before — pure luxury from start to finish. Every detail was taken care of.
-        </p>
-        <div class="testimonial-footer">
-          <div class="testimonial-avatar" aria-hidden="true">SM</div>
-          <div>
-            <span class="testimonial-name">Sarah M.</span>
-            <span class="testimonial-role">Pedicure Enthusiast</span>
+    <div class="reviews-carousel reveal" data-reviews-carousel>
+      <div class="reviews-track" role="region" aria-label="Client reviews, scroll sideways for more" tabindex="0">
+        <article class="testimonial-card" aria-label="Review 1 of 6">
+          <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
+          <div class="testimonial-stars" role="img" aria-label="5 out of 5 stars">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
           </div>
-        </div>
-      </article>
-
-      <article class="testimonial-card reveal reveal-delay-1">
-        <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
-        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
-        </div>
-        <p class="testimonial-text">
-          I've been coming to La Belle for over a year and my nails have never looked better. The gel manicures last for weeks and the salon feels so calming.
-        </p>
-        <div class="testimonial-footer">
-          <div class="testimonial-avatar" aria-hidden="true">JT</div>
-          <div>
-            <span class="testimonial-name">Jessica T.</span>
-            <span class="testimonial-role">Gel Manicure Regular</span>
+          <p class="testimonial-text">I have been going here for the past TEN years. I absolutely love this place and will always come back. My sister, my mother, my …</p>
+          <div class="testimonial-footer">
+            <div class="testimonial-avatar" aria-hidden="true">GM</div>
+            <div>
+              <span class="testimonial-name">Gabriela M.</span>
+              <span class="testimonial-role">Google review</span>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="testimonial-card reveal reveal-delay-2">
-        <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
-        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
-        </div>
-        <p class="testimonial-text">
-          Booked a last-minute waxing appointment and they fit me right in. Professional, quick, and so gentle — this is officially my go-to spot.
-        </p>
-        <div class="testimonial-footer">
-          <div class="testimonial-avatar" aria-hidden="true">AR</div>
-          <div>
-            <span class="testimonial-name">Amanda R.</span>
-            <span class="testimonial-role">New Client</span>
+        <article class="testimonial-card" aria-label="Review 2 of 6">
+          <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
+          <div class="testimonial-stars" role="img" aria-label="5 out of 5 stars">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
           </div>
-        </div>
-      </article>
+          <p class="testimonial-text">I had such a great experience here! I got clear ombré gel-x extensions and the tropical pedicure + shellac polish, and both services exceeded my expectations😊 …</p>
+          <div class="testimonial-footer">
+            <div class="testimonial-avatar" aria-hidden="true">CL</div>
+            <div>
+              <span class="testimonial-name">Cynthia L.</span>
+              <span class="testimonial-role">Google review</span>
+            </div>
+          </div>
+        </article>
 
+        <article class="testimonial-card" aria-label="Review 3 of 6">
+          <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
+          <div class="testimonial-stars" role="img" aria-label="5 out of 5 stars">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+          </div>
+          <p class="testimonial-text">Lynne is amazing! She knew what I wanted with my natural nails. Powder gel over my natural nails plus her talent made my nails beautiful! Everyone is great …</p>
+          <div class="testimonial-footer">
+            <div class="testimonial-avatar" aria-hidden="true">LK</div>
+            <div>
+              <span class="testimonial-name">Lisa K.</span>
+              <span class="testimonial-role">Google review</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial-card" aria-label="Review 4 of 6">
+          <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
+          <div class="testimonial-stars" role="img" aria-label="5 out of 5 stars">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+          </div>
+          <p class="testimonial-text">I've had my nails done here twice an i love it!! The techs are so sweet and their work is so clean and precise!</p>
+          <div class="testimonial-footer">
+            <div class="testimonial-avatar" aria-hidden="true">VJ</div>
+            <div>
+              <span class="testimonial-name">Vanessa J.</span>
+              <span class="testimonial-role">Google review</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial-card" aria-label="Review 5 of 6">
+          <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
+          <div class="testimonial-stars" role="img" aria-label="5 out of 5 stars">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+          </div>
+          <p class="testimonial-text">I went in.Got a full set with designs by tina and also got a pedicure done by kim.Great ladies professional i will be recommending them to friends and family. …</p>
+          <div class="testimonial-footer">
+            <div class="testimonial-avatar" aria-hidden="true">JS</div>
+            <div>
+              <span class="testimonial-name">Josie S.</span>
+              <span class="testimonial-role">Google review</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial-card" aria-label="Review 6 of 6">
+          <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
+          <div class="testimonial-stars" role="img" aria-label="5 out of 5 stars">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A059" aria-hidden="true"><polygon points="12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2"/></svg>
+          </div>
+          <p class="testimonial-text">I loved my stiletto nails Lynn did for me, amazing service!!!…</p>
+          <div class="testimonial-footer">
+            <div class="testimonial-avatar" aria-hidden="true">JW</div>
+            <div>
+              <span class="testimonial-name">Jaylah W.</span>
+              <span class="testimonial-role">Google review</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="reviews-controls">
+        <button type="button" class="reviews-btn prev" aria-label="Previous reviews">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <div class="reviews-dots"></div>
+        <button type="button" class="reviews-btn next" aria-label="Next reviews">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
     </div>
+
+    <a href="https://www.google.com/maps/search/?api=1&amp;query=La+Belle+Nails+%26+Relaxation+440+Rayford+Rd+Spring+TX+77386" class="service-cta reviews-more" target="_blank" rel="noopener">
+      Read all reviews on Google
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
   </section>
 
 
@@ -369,15 +575,15 @@
       <div class="footer-top">
 
         <div class="footer-brand">
-          <div class="logo" aria-label="La Belle">
+          <div class="logo">
             <span class="logo-title">La Belle</span>
-            <span class="logo-subtitle">Beauty &amp; Nail Spa</span>
+            <span class="logo-subtitle">Nails &amp; Relaxation</span>
           </div>
-          <p>A place where beauty and relaxation meet. We warmly welcome you to discover the La Belle experience — a sanctuary of elegance and well-being.</p>
+          <p>A nail salon and spa in Spring, TX, where beauty and relaxation meet. We warmly welcome you to discover the La Belle experience — a sanctuary of elegance and well-being.</p>
         </div>
 
         <div>
-          <h4 class="footer-col-title">Navigation</h4>
+          <h2 class="footer-col-title">Navigation</h2>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
@@ -387,39 +593,38 @@
         </div>
 
         <div>
-          <h4 class="footer-col-title">Get in Touch</h4>
-          <div class="footer-contact">
-            <div class="contact-item">
+          <h2 class="footer-col-title">Get in Touch</h2>
+          <address class="footer-contact">
+            <a class="contact-item" href="https://www.google.com/maps/search/?api=1&amp;query=La+Belle+440+Rayford+Rd+Spring+TX+77386" target="_blank" rel="noopener">
               <span class="contact-icon" aria-hidden="true">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               </span>
               <span>440 Rayford Rd, Spring, TX 77386</span>
-            </div>
-            <div class="contact-item">
+            </a>
+            <a class="contact-item" href="tel:+12812166471">
               <span class="contact-icon" aria-hidden="true">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               </span>
               <span>+1 281-216-6471</span>
-            </div>
-            <div class="contact-item">
-              <span class="contact-icon" aria-hidden="true">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </span>
-              <span>contact@labelle.ro</span>
-            </div>
+            </a>
             <div class="contact-item">
               <span class="contact-icon" aria-hidden="true">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               </span>
-              <span>Mon – Sat: 09:00 – 19:00</span>
+              <span>Mon – Sat: 09:00 – 19:00<br />Sun: 11:00 – 17:00</span>
             </div>
-          </div>
+          </address>
         </div>
 
       </div>
 
       <div class="footer-bottom">
-        <span>© 2026 La Belle. All rights reserved.</span>
+        <span>© 2026 La Belle Nails &amp; Relaxation. All rights reserved.</span>
+        <span class="footer-legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <span aria-hidden="true">·</span>
+          <button type="button" class="footer-legal-btn" data-cookie-settings>Cookie Settings</button>
+        </span>
         <span>Crafted with <span class="footer-gold">♥</span> for beauty</span>
       </div>
     </div>

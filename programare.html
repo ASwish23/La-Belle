@@ -3,8 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Book at La Belle — Reserve your spot at our premium beauty and nail spa salon. Online booking is quick and easy." />
-  <title>Appointments | La Belle Beauty &amp; Nail Spa</title>
+  <title>Book a Nail Appointment Online | La Belle Spring, TX</title>
+  <meta name="description" content="Book your manicure, pedicure, waxing or massage online at La Belle, 440 Rayford Rd, Spring, TX 77386. Open Mon–Sat 9–7, Sun 11–5. Call +1 281-216-6471." />
+  <link rel="canonical" href="https://www.example.com/programare.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#1A365D" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="La Belle Nails &amp; Relaxation" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Book an Appointment | La Belle, Spring, TX" />
+  <meta property="og:description" content="Book your manicure, pedicure, waxing or massage online at La Belle, 440 Rayford Rd, Spring, TX." />
+  <meta property="og:url" content="https://www.example.com/programare.html" />
+  <meta property="og:image" content="https://www.example.com/images-salon/IMG_20311.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,7 +34,7 @@
   <header class="header" id="header">
     <a href="index.html" class="logo" aria-label="La Belle — Home">
       <span class="logo-title">La Belle</span>
-      <span class="logo-subtitle">Beauty &amp; Nail Spa</span>
+      <span class="logo-subtitle">Nails &amp; Relaxation</span>
     </a>
 
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -43,17 +55,20 @@
   <!-- ========================================
        PAGE HERO
   ======================================== -->
-  <div class="page-hero" aria-hidden="true">
+  <div class="page-hero">
     <img
-      src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1920&q=80"
-      alt="Book an Appointment at La Belle Salon"
+      src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1600&q=70"
+      srcset="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=70 800w,
+              https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1600&q=70 1600w"
+      sizes="100vw"
+      alt=""
       loading="eager"
       fetchpriority="high"
     />
-    <div class="page-hero-overlay"></div>
+    <div class="page-hero-overlay" aria-hidden="true"></div>
     <div class="page-hero-content">
-      <span class="page-hero-label">La Belle</span>
-      <h1 class="page-hero-title"><em>Book</em> Now</h1>
+      <span class="page-hero-label">La Belle · Spring, TX</span>
+      <h1 class="page-hero-title"><em>Book</em> Your Appointment</h1>
     </div>
   </div>
 
@@ -120,7 +135,7 @@
           </div>
           <div class="info-card-body">
             <h4>Phone</h4>
-            <p>+1 281-216-6471</p>
+            <p><a href="tel:+12812166471">+1 281-216-6471</a></p>
           </div>
         </div>
 
@@ -130,10 +145,31 @@
           </div>
           <div class="info-card-body">
             <h4>Location</h4>
-            <p>440 Rayford Rd<br />Spring, TX</p>
+            <p>440 Rayford Rd<br />Spring, TX 77386</p>
           </div>
         </div>
 
+      </div>
+
+      <!-- Google Map -->
+      <!-- The map loads only after the visitor accepts cookies or clicks "Show map" (see script.js, COOKIE CONSENT) -->
+      <div class="map-embed reveal" data-consent-embed>
+        <iframe
+          title="Map showing La Belle at 440 Rayford Rd, Spring, TX 77386"
+          data-src="https://www.google.com/maps?q=440+Rayford+Rd,+Spring,+TX+77386&output=embed"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          hidden
+        ></iframe>
+        <div class="map-placeholder">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <p>The map is provided by Google, which may set cookies.</p>
+          <div class="map-placeholder-actions">
+            <button type="button" class="map-placeholder-btn" data-load-embed>Show map</button>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=La+Belle+440+Rayford+Rd+Spring+TX+77386" target="_blank" rel="noopener">Open in Google Maps</a>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -148,15 +184,15 @@
       <div class="footer-top">
 
         <div class="footer-brand">
-          <div class="logo" aria-label="La Belle">
+          <div class="logo">
             <span class="logo-title">La Belle</span>
-            <span class="logo-subtitle">Beauty &amp; Nail Spa</span>
+            <span class="logo-subtitle">Nails &amp; Relaxation</span>
           </div>
-          <p>A place where beauty and relaxation meet. We warmly welcome you to discover the La Belle experience.</p>
+          <p>A nail salon and spa in Spring, TX, where beauty and relaxation meet. We warmly welcome you to discover the La Belle experience — a sanctuary of elegance and well-being.</p>
         </div>
 
         <div>
-          <h4 class="footer-col-title">Navigation</h4>
+          <h2 class="footer-col-title">Navigation</h2>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
@@ -166,33 +202,38 @@
         </div>
 
         <div>
-          <h4 class="footer-col-title">Get in Touch</h4>
-          <div class="footer-contact">
-            <div class="contact-item">
+          <h2 class="footer-col-title">Get in Touch</h2>
+          <address class="footer-contact">
+            <a class="contact-item" href="https://www.google.com/maps/search/?api=1&amp;query=La+Belle+440+Rayford+Rd+Spring+TX+77386" target="_blank" rel="noopener">
               <span class="contact-icon" aria-hidden="true">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               </span>
               <span>440 Rayford Rd, Spring, TX 77386</span>
-            </div>
-            <div class="contact-item">
+            </a>
+            <a class="contact-item" href="tel:+12812166471">
               <span class="contact-icon" aria-hidden="true">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               </span>
               <span>+1 281-216-6471</span>
-            </div>
+            </a>
             <div class="contact-item">
               <span class="contact-icon" aria-hidden="true">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               </span>
-              <span>contact@labelle.ro</span>
+              <span>Mon – Sat: 09:00 – 19:00<br />Sun: 11:00 – 17:00</span>
             </div>
-          </div>
+          </address>
         </div>
 
       </div>
 
       <div class="footer-bottom">
-        <span>© 2026 La Belle. All rights reserved.</span>
+        <span>© 2026 La Belle Nails &amp; Relaxation. All rights reserved.</span>
+        <span class="footer-legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <span aria-hidden="true">·</span>
+          <button type="button" class="footer-legal-btn" data-cookie-settings>Cookie Settings</button>
+        </span>
         <span>Crafted with <span class="footer-gold">♥</span> for beauty</span>
       </div>
     </div>

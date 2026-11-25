@@ -82,6 +82,8 @@
     let timer     = null;
     const total   = slides.length;
     const DELAY   = 5500; // ms between auto-advances
+    // No auto-advance for visitors who ask their OS for reduced motion
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const goTo = (index) => {
       current = ((index % total) + total) % total;
@@ -91,6 +93,7 @@
 
     const startTimer = () => {
       clearInterval(timer);
+      if (reduceMotion) return;
       timer = setInterval(() => goTo(current + 1), DELAY);
     };
 
@@ -109,6 +112,8 @@
 
     // Keyboard navigation (left / right arrows) when carousel is in view
     document.addEventListener('keydown', (e) => {
+      // Arrow keys inside the reviews carousel scroll the reviews, not the hero
+      if (e.target.closest && e.target.closest('.reviews-track')) return;
       if (e.key === 'ArrowLeft')  { goTo(current - 1); stopTimer(); startTimer(); }
       if (e.key === 'ArrowRight') { goTo(current + 1); stopTimer(); startTimer(); }
     });
@@ -144,6 +149,92 @@
     goTo(0);
     startTimer();
   }
+
+  /* =============================================
+     REVIEWS CAROUSEL
+     The track is a native sideways scroller with CSS snap points
+     (swipe works on its own). Arrows and dots move one "page" — as
+     many cards as fit in view — and wrap around at the ends.
+  ============================================= */
+  qsa('[data-reviews-carousel]').forEach(root => {
+    const track    = qs('.reviews-track', root);
+    const cards    = qsa('.testimonial-card', track);
+    const prev     = qs('.reviews-btn.prev', root);
+    const next     = qs('.reviews-btn.next', root);
+    const dotsWrap = qs('.reviews-dots', root);
+    if (!track || cards.length === 0) return;
+
+    // Distance from one card's start to the next (card width + gap)
+    const step     = () => (cards[1] ? cards[1].offsetLeft - cards[0].offsetLeft : track.clientWidth);
+    const perView  = () => Math.max(1, Math.round(track.clientWidth / step()));
+    const pages    = () => Math.ceil(cards.length / perView());
+    const maxLeft  = () => track.scrollWidth - track.clientWidth;
+    const pageLeft = (page) => Math.min(page * perView(), cards.length - perView()) * step();
+
+    const currentPage = () => {
+      if (track.scrollLeft >= maxLeft() - 4) return pages() - 1;
+      return Math.round(track.scrollLeft / step() / perView());
+    };
+
+    // While a button/dot-triggered scroll is animating, show its target page
+    // right away instead of flickering through the pages in between
+    let lockedPage = null;
+    let lockTimer  = null;
+    const releaseLock = () => { lockedPage = null; updateDots(); };
+
+    const goToPage = (page) => {
+      const total = pages();
+      const target = ((page % total) + total) % total; // wrap around
+      lockedPage = target;
+      clearTimeout(lockTimer);
+      lockTimer = setTimeout(releaseLock, 900);
+      track.scrollTo({ left: pageLeft(target) });
+      updateDots();
+    };
+
+    let dots = [];
+    const buildDots = () => {
+      dotsWrap.innerHTML = '';
+      const total = pages();
+      dots = Array.from({ length: total }, (_, i) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'reviews-dot';
+        dot.setAttribute('aria-label', `Show reviews, page ${i + 1} of ${total}`);
+        dot.addEventListener('click', () => goToPage(i));
+        dotsWrap.appendChild(dot);
+        return dot;
+      });
+      // Hide the controls entirely when every review already fits
+      qs('.reviews-controls', root).hidden = total < 2;
+      updateDots();
+    };
+
+    const updateDots = () => {
+      const active = lockedPage !== null ? lockedPage : currentPage();
+      dots.forEach((d, i) => {
+        d.classList.toggle('active', i === active);
+        if (i === active) d.setAttribute('aria-current', 'true');
+        else d.removeAttribute('aria-current');
+      });
+    };
+
+    prev.addEventListener('click', () => goToPage(currentPage() - 1));
+    next.addEventListener('click', () => goToPage(currentPage() + 1));
+
+    // Cheap (a handful of dots), so update on every scroll event, plus once
+    // more when scrolling settles in browsers that support 'scrollend'
+    track.addEventListener('scroll', updateDots, { passive: true });
+    track.addEventListener('scrollend', () => { clearTimeout(lockTimer); releaseLock(); });
+
+    let lastPerView = perView();
+    window.addEventListener('resize', () => {
+      if (perView() !== lastPerView) { lastPerView = perView(); buildDots(); }
+      else updateDots();
+    });
+
+    buildDots();
+  });
 
   /* =============================================
      SCROLL REVEAL (Intersection Observer)
@@ -260,5 +351,82 @@
       if (e.key === 'Escape' && overlay.style.display === 'flex') closeLightbox();
     });
   }
+
+  /* =============================================
+     COOKIE CONSENT
+     The visitor's choice is saved in localStorage as 'all' or
+     'essential'. Third-party embeds marked [data-consent-embed]
+     (the Google map on programare.html) only load with 'all', or
+     when the visitor clicks "Show map" on that embed. The footer's
+     "Cookie Settings" button [data-cookie-settings] reopens the banner.
+  ============================================= */
+  const CONSENT_KEY = 'labelle-cookie-consent';
+  const readConsent = () => {
+    try { return localStorage.getItem(CONSENT_KEY); } catch (e) { return null; }
+  };
+  const saveConsent = (value) => {
+    try { localStorage.setItem(CONSENT_KEY, value); } catch (e) { /* private mode: ask again next visit */ }
+  };
+
+  const loadEmbed = (wrap) => {
+    const frame = wrap && qs('iframe[data-src]', wrap);
+    if (!frame) return;
+    frame.src = frame.dataset.src;
+    frame.removeAttribute('data-src');
+    frame.hidden = false;
+    wrap.classList.add('is-loaded');
+  };
+  const loadAllEmbeds = () => qsa('[data-consent-embed]').forEach(loadEmbed);
+
+  qsa('[data-load-embed]').forEach(btn => {
+    btn.addEventListener('click', () => loadEmbed(btn.closest('[data-consent-embed]')));
+  });
+
+  const banner = document.createElement('div');
+  banner.className = 'cookie-banner';
+  banner.setAttribute('role', 'region');
+  banner.setAttribute('aria-label', 'Cookie consent');
+  banner.hidden = true;
+  banner.innerHTML = `
+    <p class="cookie-banner-title">We value your privacy</p>
+    <p class="cookie-banner-text">
+      This site only uses what it needs to work, including our online booking tool.
+      With your permission we'll also load Google Maps, which may set its own cookies.
+      See our <a href="privacy.html#cookies">Privacy Policy</a>.
+    </p>
+    <div class="cookie-banner-actions">
+      <button type="button" class="cookie-btn cookie-btn-essential" data-consent="essential">Essential only</button>
+      <button type="button" class="cookie-btn cookie-btn-accept" data-consent="all">Accept all</button>
+    </div>`;
+  document.body.appendChild(banner);
+
+  let hideTimer = null;
+  const showBanner = (focus) => {
+    clearTimeout(hideTimer);
+    banner.hidden = false;
+    requestAnimationFrame(() => banner.classList.add('is-visible'));
+    if (focus) qs('.cookie-btn', banner).focus();
+  };
+  const hideBanner = () => {
+    banner.classList.remove('is-visible');
+    hideTimer = setTimeout(() => { banner.hidden = true; }, 400);
+  };
+
+  qsa('[data-consent]', banner).forEach(btn => {
+    btn.addEventListener('click', () => {
+      const choice = btn.dataset.consent;
+      saveConsent(choice);
+      if (choice === 'all') loadAllEmbeds();
+      hideBanner();
+    });
+  });
+
+  qsa('[data-cookie-settings]').forEach(btn => {
+    btn.addEventListener('click', () => showBanner(true));
+  });
+
+  const savedConsent = readConsent();
+  if (savedConsent === 'all') loadAllEmbeds();
+  if (!savedConsent) showBanner(false);
 
 })();
